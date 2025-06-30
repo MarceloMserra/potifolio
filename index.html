@@ -443,15 +443,16 @@
         }
 
         /* --- SEÇÃO RESPONSIVA --- */
-        @media (max-width: 768px) {
+/* ===== BLOCO NOVO - PARA COLAR NO LUGAR DO ANTIGO ===== */
+@media (max-width: 768px) {
     .header h1 {
         font-size: 2rem;
     }
-    
+
     .content {
         padding: 20px;
     }
-    
+
     .projects-grid,
     .stats-grid,
     .contact-grid,
@@ -471,7 +472,7 @@
     .hamburger-menu {
         display: block;
     }
-    
+
     .hamburger-menu.active .bar:nth-child(2) {
         opacity: 0;
     }
@@ -482,7 +483,6 @@
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* Regra que vamos AJUSTAR */
     .nav-content {
         position: fixed;
         right: -100%;
@@ -496,19 +496,18 @@
         padding-top: 40px;
         box-shadow: -5px 0 15px rgba(0,0,0,0.2);
         transition: right 0.4s ease-in-out;
-        
-        /* LINHA MODIFICADA */
-        gap: 10px; /* << DIMINUI O ESPAÇO ENTRE OS LINKS */
+        gap: 10px;
     }
 
     .nav-content.active {
         right: 0;
     }
 
-    /* NOVA REGRA ADICIONADA */
+    /* ESTA É A REGRA CORRIGIDA */
     .nav-content a {
-        font-size: 1.1rem;  /* << REDUZ O TAMANHO DA FONTE AQUI */
-        padding: 10px 0;    /* Um pequeno ajuste no espaçamento vertical */
+        font-size: 1rem;      /* Define o tamanho padrão (16px), ótimo para leitura. */
+        font-weight: 400;   /* Deixa a fonte com peso "normal", menos negrito. */
+        padding: 12px 0;
     }
 }
 
