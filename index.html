@@ -27,78 +27,98 @@
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     }
 
-    header#topbar {
-      position: fixed;
+    .header {
+      background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+      color: white;
+      padding: 60px 0 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      background: #2c3e50;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 20px;
-      z-index: 1000;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="25" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="25" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.1;
     }
 
-    .logo {
-      font-weight: bold;
-      font-size: 1.2rem;
-      color: white;
-      text-decoration: none;
+    .header-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 40px;
     }
 
-    nav#menu {
-      display: flex;
-      gap: 20px;
+    .header-content img {
+      width: 100px;
+      margin-bottom: 20px;
     }
 
-    nav#menu a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    nav#menu a:hover {
+    .header .subtitle {
+      font-size: 1.4rem;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+
+    .header .org-name {
+      font-size: 2rem;
+      font-weight: 600;
       color: #f39c12;
+      margin-bottom: 10px;
     }
 
-    .hamburger {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
+    .header .details {
+      font-size: 1.1rem;
+      opacity: 0.8;
     }
 
-    @media (max-width: 768px) {
-      nav#menu {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #2c3e50;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding: 20px 0;
-      }
+    .nav {
+      background: #34495e;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-      nav#menu.active {
-        display: flex;
-      }
+    .nav-content {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
 
-      .hamburger {
-        display: block;
-      }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .nav a:hover {
+      background: #3498db;
+      transform: translateY(-2px);
     }
 
     .content {
-      padding: 120px 40px 40px;
+      padding: 40px;
     }
 
     .section {
-      margin: 60px 0;
+      margin-bottom: 60px;
     }
 
     .section-title {
@@ -140,38 +160,69 @@
       margin-bottom: 15px;
     }
 
-    .card h4 {
-      color: #3498db;
-      font-size: 1.2rem;
-      margin: 20px 0 10px 0;
-    }
-
-    .photo-indicator, .mapa-img {
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    .mapa-img img {
-      max-width: 100%;
+    .photo-indicator {
+      background: #e8f4fd;
+      border: 2px dashed #3498db;
       border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      text-align: center;
+      color: #2980b9;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 { font-size: 2rem; }
+      .header .subtitle { font-size: 1rem; }
+      .header .org-name { font-size: 1.4rem; }
+      .section-title { font-size: 1.8rem; }
+      .content { padding: 0 15px; }
+    }
+
+    @media print {
+      .nav { display: none; }
+      .header { background: #2c3e50 !important; -webkit-print-color-adjust: exact; }
+      .card { break-inside: avoid; }
     }
   </style>
 </head>
 <body>
-  <a id="topo"></a>
-  <header id="topbar">
-    <a href="#topo" class="logo" onclick="closeMenu()">Instituto Tribus</a>
-    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-    <nav id="menu">
-      <a href="#apresentacao" onclick="closeMenu()">Apresentação</a>
-      <a href="#territorio" onclick="closeMenu()">Território</a>
-      <a href="#projetos" onclick="closeMenu()">Projetos</a>
-      <a href="#parcerias" onclick="closeMenu()">Parcerias</a>
-      <a href="#transparencia" onclick="closeMenu()">Transparência</a>
-      <a href="#contato" onclick="closeMenu()">Contato</a>
-      <a href="#apoio" onclick="closeMenu()">Apoio</a>
-    </nav>
-  </header>
+  <div class="nav">
+    <div class="nav-content">
+      <a href="#apresentacao">Apresentação</a>
+      <a href="#territorio">Território</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#parcerias">Parcerias</a>
+      <a href="#transparencia">Transparência</a>
+      <a href="#contato">Contato</a>
+      <a href="#apoio">Apoio</a>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="header-content">
+      <img src="LOGO.png" alt="Logo Instituto Tribus" />
+      <h1>PORTFÓLIO DE CAPACIDADE TÉCNICA</h1>
+      <p class="subtitle">Excelência e Inovação na Promoção do Desenvolvimento Social</p>
+      <div class="org-name">INSTITUTO TRIBUS</div>
+      <p class="details">
+        <strong>CNPJ:</strong> 50.903.480/0001-79<br />
+        <strong>Brasília, DF - Junho de 2025</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content">
+      <div class="section" id="apresentacao">
+        <h2 class="section-title">1. Prefácio</h2>
+        <p>Este Portfólio de Capacidade Técnica é um documento abrangente...</p>
+      </div>
+      <!-- Outras seções: Território, Projetos, etc. -->
+    </div>
+  </div>
+</body>
+</html>
 
 
 
@@ -179,35 +230,7 @@
 
 
 
-  
-    <div class="container">
-        <header class="header">
-            <div class="header-content">
-                <div class="logo-placeholder" style="border: none; background: none; box-shadow: none;">
-                    <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/logoBlack.png" alt="Logo Instituto Tribus" style="max-width: 150px; height: auto;">
-                </div>
 
-                <h1>PORTFÓLIO DE CAPACIDADE TÉCNICA</h1>
-                <div class="subtitle">Excelência e Inovação na Promoção do Desenvolvimento Social</div>
-                <div class="org-name">INSTITUTO TRIBUS</div>
-                <div class="details">
-                    <strong>CNPJ:</strong> 50.903.480/0001-79 <br>
-                    <strong>Brasília, DF - Junho de 2025</strong> 
-                </div>
-            </div>
-        </header>
-
-        <nav class="nav">
-            <div class="nav-content">
-                <a href="#apresentacao">Apresentação</a>
-                <a href="#territorio">Território</a>
-                <a href="#projetos">Projetos</a>
-                <a href="#parcerias">Parcerias</a>
-                <a href="#transparencia">Transparência</a>
-                <a href="#contato">Contato</a>
-                <a href="#apoio">Apoio</a>
-            </div>
-        </nav>
 
         <div class="content">
             <section class="section" id="prefacio">
