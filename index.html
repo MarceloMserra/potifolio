@@ -30,7 +30,7 @@
     .header {
       background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
       color: white;
-      padding: 60px 0 40px;
+      padding: 60px 0;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -53,9 +53,19 @@
       padding: 0 40px;
     }
 
-    .header-content img {
-      width: 100px;
-      margin-bottom: 20px;
+    .logo-placeholder {
+      width: 120px;
+      height: 120px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 3px dashed rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
     }
 
     .header h1 {
@@ -75,7 +85,7 @@
       font-size: 2rem;
       font-weight: 600;
       color: #f39c12;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .header .details {
@@ -85,14 +95,15 @@
 
     .nav {
       background: #34495e;
-      padding: 15px 0;
+      padding: 20px 0;
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 100;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .nav-content {
+      padding: 0 20px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -106,6 +117,7 @@
       border-radius: 25px;
       transition: all 0.3s ease;
       font-weight: 500;
+      white-space: nowrap;
     }
 
     .nav a:hover {
@@ -114,11 +126,11 @@
     }
 
     .content {
-      padding: 40px;
+      padding: 0 40px;
     }
 
     .section {
-      margin-bottom: 60px;
+      margin: 60px 0;
     }
 
     .section-title {
@@ -160,6 +172,12 @@
       margin-bottom: 15px;
     }
 
+    .card h4 {
+      color: #3498db;
+      font-size: 1.2rem;
+      margin: 20px 0 10px 0;
+    }
+
     .photo-indicator {
       background: #e8f4fd;
       border: 2px dashed #3498db;
@@ -171,66 +189,87 @@
       font-weight: 500;
     }
 
+    /* Responsividade */
     @media (max-width: 768px) {
-      .header h1 { font-size: 2rem; }
-      .header .subtitle { font-size: 1rem; }
-      .header .org-name { font-size: 1.4rem; }
-      .section-title { font-size: 1.8rem; }
-      .content { padding: 0 15px; }
+      .header h1 {
+        font-size: 1.8rem;
+      }
+
+      .header .subtitle {
+        font-size: 1.1rem;
+      }
+
+      .header .org-name {
+        font-size: 1.4rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .content {
+        padding: 0 15px;
+      }
+
+      .nav-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav a {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+      }
     }
 
     @media print {
-      .nav { display: none; }
-      .header { background: #2c3e50 !important; -webkit-print-color-adjust: exact; }
-      .card { break-inside: avoid; }
+      .nav {
+        display: none;
+      }
+
+      .header {
+        background: #2c3e50 !important;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .card {
+        break-inside: avoid;
+      }
     }
   </style>
 </head>
-<body>
-  <div class="nav">
-    <div class="nav-content">
-      <a href="#apresentacao">Apresentação</a>
-      <a href="#territorio">Território</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#parcerias">Parcerias</a>
-      <a href="#transparencia">Transparência</a>
-      <a href="#contato">Contato</a>
-      <a href="#apoio">Apoio</a>
-    </div>
-  </div>
 
-  <div class="header">
-    <div class="header-content">
-      <img src="LOGO.png" alt="Logo Instituto Tribus" />
-      <h1>PORTFÓLIO DE CAPACIDADE TÉCNICA</h1>
-      <p class="subtitle">Excelência e Inovação na Promoção do Desenvolvimento Social</p>
-      <div class="org-name">INSTITUTO TRIBUS</div>
-      <p class="details">
-        <strong>CNPJ:</strong> 50.903.480/0001-79<br />
-        <strong>Brasília, DF - Junho de 2025</strong>
-      </p>
-    </div>
-  </div>
+  
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-placeholder" style="border: none; background: none; box-shadow: none;">
+                    <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/logoBlack.png" alt="Logo Instituto Tribus" style="max-width: 150px; height: auto;">
+                </div>
 
-  <div class="container">
-    <div class="content">
-      <div class="section" id="apresentacao">
-        <h2 class="section-title">1. Prefácio</h2>
-        <p>Este Portfólio de Capacidade Técnica é um documento abrangente...</p>
-      </div>
-      <!-- Outras seções: Território, Projetos, etc. -->
-    </div>
-  </div>
-</body>
-</html>
+                <h1>PORTFÓLIO DE CAPACIDADE TÉCNICA</h1>
+                <div class="subtitle">Excelência e Inovação na Promoção do Desenvolvimento Social</div>
+                <div class="org-name">INSTITUTO TRIBUS</div>
+                <div class="details">
+                    <strong>CNPJ:</strong> 50.903.480/0001-79 <br>
+                    <strong>Brasília, DF - Junho de 2025</strong> 
+                </div>
+            </div>
+        </header>
 
-
-
-
-
-
-
-
+        <nav class="nav">
+            <div class="nav-content">
+                <a href="#apresentacao">Apresentação</a>
+                <a href="#territorio">Território</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#parcerias">Parcerias</a>
+                <a href="#transparencia">Transparência</a>
+                <a href="#contato">Contato</a>
+                <a href="#apoio">Apoio</a>
+            </div>
+        </nav>
 
         <div class="content">
             <section class="section" id="prefacio">
