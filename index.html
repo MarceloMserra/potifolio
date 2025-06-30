@@ -444,67 +444,73 @@
 
         /* --- SEÇÃO RESPONSIVA --- */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-            
-            .projects-grid,
-            .stats-grid,
-            .contact-grid,
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .projects-grid,
+    .stats-grid,
+    .contact-grid,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
 
-            /* --- ESTILOS DO MENU PARA MOBILE --- */
-            .nav-container {
-                justify-content: space-between; /* Alinha logo à esquerda e hambúrguer à direita */
-            }
+    /* --- ESTILOS DO MENU PARA MOBILE --- */
+    .nav-container {
+        justify-content: space-between;
+    }
 
-            .nav-logo {
-                display: block; /* Mostra a logo no mobile */
-            }
+    .nav-logo {
+        display: block;
+    }
 
-            .hamburger-menu {
-                display: block; /* Mostra o ícone do hambúrguer */
-            }
-            
-            /* Animação do hambúrguer para um "X" quando ativo */
-            .hamburger-menu.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-            .hamburger-menu.active .bar:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-            .hamburger-menu.active .bar:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
+    .hamburger-menu {
+        display: block;
+    }
+    
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 
-            /* Esconde o menu de links e o prepara como um painel lateral */
-            .nav-content {
-                position: fixed;
-                right: -100%; /* Começa fora da tela */
-                top: 70px; /* Posição abaixo do header fixo (ajuste se necessário) */
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                gap: 25px;
-                width: 70%;
-                height: 100vh;
-                background: #2c3e50; /* Cor de fundo do painel */
-                padding-top: 40px;
-                box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-                transition: right 0.4s ease-in-out;
-            }
+    /* Regra que vamos AJUSTAR */
+    .nav-content {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 70%;
+        height: 100vh;
+        background: #2c3e50;
+        padding-top: 40px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+        transition: right 0.4s ease-in-out;
+        
+        /* LINHA MODIFICADA */
+        gap: 10px; /* << DIMINUI O ESPAÇO ENTRE OS LINKS */
+    }
 
-            /* Classe que o JavaScript adicionará para mostrar o menu */
-            .nav-content.active {
-                right: 0; /* Puxa o menu para dentro da tela */
-            }
-        }
+    .nav-content.active {
+        right: 0;
+    }
+
+    /* NOVA REGRA ADICIONADA */
+    .nav-content a {
+        font-size: 1.1rem;  /* << REDUZ O TAMANHO DA FONTE AQUI */
+        padding: 10px 0;    /* Um pequeno ajuste no espaçamento vertical */
+    }
+}
 
         /* Print Styles */
         @media print {
