@@ -1,19 +1,3 @@
-Claro\! Com certeza. Esta é a maneira mais segura de garantir que tudo funcione perfeitamente.
-
-Abaixo estão as instruções e o código completo e já modificado.
-
-### O que Fazer (Apenas 2 Passos)
-
-1.  **Selecione e copie** todo o código que está na caixa cinza abaixo.
-2.  **Apague TUDO** o que está no seu arquivo HTML atual e **cole** este novo código no lugar.
-
-Isso é tudo. O arquivo final já contém as correções de estrutura (o menu dentro do `<body>`), o novo HTML do menu, todo o CSS ajustado e o JavaScript no final do arquivo.
-
------
-
-### Código Completo e Final
-
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -111,7 +95,7 @@ Isso é tudo. O arquivo final já contém as correções de estrutura (o menu de
 
     .nav {
       background: #34495e;
-      padding: 10px 0;
+      padding: 20px 0;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -140,39 +124,6 @@ Isso é tudo. O arquivo final já contém as correções de estrutura (o menu de
       background: #3498db;
       transform: translateY(-2px);
     }
-    
-    /* --- ESTILOS ADICIONAIS PARA O NOVO MENU --- */
-    .nav-container {
-        max-width: 1200px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 20px; /* Padding para não colar nas laterais */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .nav-logo img {
-        max-height: 50px; /* Ajuste a altura da sua logo no menu */
-        width: auto;
-        display: block;
-    }
-
-    /* Oculta o menu hambúrguer em telas grandes */
-    .hamburger-menu {
-        display: none;
-        cursor: pointer;
-    }
-
-    .hamburger-menu .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        background-color: white;
-        transition: all 0.3s ease-in-out;
-    }
-    /* --- FIM DOS ESTILOS ADICIONAIS --- */
 
     .content {
       padding: 0 40px;
@@ -240,72 +191,37 @@ Isso é tudo. O arquivo final já contém as correções de estrutura (o menu de
 
     /* Responsividade */
     @media (max-width: 768px) {
-        .header h1 {
-            font-size: 1.8rem;
-        }
+      .header h1 {
+        font-size: 1.8rem;
+      }
 
-        .header .subtitle {
-            font-size: 1.1rem;
-        }
+      .header .subtitle {
+        font-size: 1.1rem;
+      }
 
-        .header .org-name {
-            font-size: 1.4rem;
-        }
+      .header .org-name {
+        font-size: 1.4rem;
+      }
 
-        .section-title {
-            font-size: 1.8rem;
-        }
+      .section-title {
+        font-size: 1.8rem;
+      }
 
-        .content {
-            padding: 0 15px;
-        }
-        
-        /* --- NOVAS REGRAS PARA O MENU MÓVEL --- */
-        
-        /* Mostra o ícone do hambúrguer */
-        .hamburger-menu {
-            display: block; 
-        }
-        
-        /* Animação do hambúrguer para um "X" quando ativo */
-        .hamburger-menu.active .bar:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger-menu.active .bar:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-        .hamburger-menu.active .bar:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
+      .content {
+        padding: 0 15px;
+      }
 
-        /* Estiliza o painel do menu que desliza da direita */
-        .nav-content {
-            position: fixed;
-            right: -100%; /* Começa fora da tela */
-            top: 70px; /* Posição abaixo do header fixo */
-            width: 70%;
-            height: 100vh;
-            background: #2c3e50; /* Cor de fundo do painel */
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding-top: 40px;
-            gap: 25px;
-            transition: right 0.4s ease-in-out;
-            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-        }
+      .nav-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
 
-        /* Classe que o JavaScript adicionará para mostrar o menu */
-        .nav-content.active {
-            right: 0; /* Puxa o menu para dentro da tela */
-        }
-
-        .nav a {
-            width: 100%;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 1.2rem;
-        }
+      .nav a {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+      }
     }
 
     @media print {
@@ -325,524 +241,765 @@ Isso é tudo. O arquivo final já contém as correções de estrutura (o menu de
   </style>
 </head>
 
-<body>
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/logoBlack.png" alt="Logo Instituto Tribus">
-            </a>
-
-            <div class="nav-content" id="nav-menu">
-                <a href="#apresentacao" class="nav-link">Apresentação</a>
-                <a href="#territorio" class="nav-link">Território</a>
-                <a href="#projetos" class="nav-link">Projetos</a>
-                <a href="#parcerias" class="nav-link">Parcerias</a>
-                <a href="#transparencia" class="nav-link">Transparência</a>
-                <a href="#contato" class="nav-link">Contato</a>
-                <a href="#apoio" class="nav-link">Apoio</a>
-            </div>
-
-            <div class="hamburger-menu" id="hamburger-toggle">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-        </div>
-    </nav>
+  
     <div class="container">
-    <header class="header">
-      <div class="header-content">
-        <div class="logo-placeholder" style="border: none; background: none; box-shadow: none;">
-          <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/logoBlack.png" alt="Logo Instituto Tribus" style="max-width: 150px; height: auto;">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-placeholder" style="border: none; background: none; box-shadow: none;">
+                    <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/logoBlack.png" alt="Logo Instituto Tribus" style="max-width: 150px; height: auto;">
+                </div>
+
+                <h1>PORTFÓLIO DE CAPACIDADE TÉCNICA</h1>
+                <div class="subtitle">Excelência e Inovação na Promoção do Desenvolvimento Social</div>
+                <div class="org-name">INSTITUTO TRIBUS</div>
+                <div class="details">
+                    <strong>CNPJ:</strong> 50.903.480/0001-79 <br>
+                    <strong>Brasília, DF - Junho de 2025</strong> 
+                </div>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <div class="nav-content">
+                <a href="#apresentacao">Apresentação</a>
+                <a href="#territorio">Território</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#parcerias">Parcerias</a>
+                <a href="#transparencia">Transparência</a>
+                <a href="#contato">Contato</a>
+                <a href="#apoio">Apoio</a>
+            </div>
+        </nav>
+
+        <div class="content">
+            <section class="section" id="prefacio">
+                <h2 class="section-title">1. PREFÁCIO</h2>
+                <div class="intro-text">
+                    Este Portfólio de Capacidade Técnica é um documento abrangente que visa apresentar a <strong>expertise, a experiência e a infraestrutura do Instituto Tribus</strong> na concepção, gestão e execução de projetos de impacto social.  Elaborado com o rigor e a formalidade exigidos para interações com órgãos governamentais, este compêndio detalha a trajetória, os pilares e as realizações concretas de uma organização comprometida com a <strong>transformação de realidades por meio da inovação social e da excelência técnica</strong>. 
+                </div>
+            </section>
+
+            <section class="section" id="apresentacao">
+                <h2 class="section-title">2. APRESENTAÇÃO INSTITUCIONAL</h2>
+                
+                <div class="card">
+                    <h3>2.1. Histórico e Gênese do Instituto Tribus</h3>
+                    <p>O Instituto Tribus, formalmente estabelecido como uma <strong>Organização da Sociedade Civil (OSC) sem fins lucrativos</strong>, tem suas raízes em um movimento espontâneo de solidariedade e engajamento comunitário.  Sua gênese remonta a <strong>meados de 2019</strong>, com a realização da <strong>1ª Ação Social "Domingueira Moto Rock" no Rio de Janeiro</strong>, em Duque de Caxias, na Vila São Luiz. </p>
+                    
+                    <div class="photo-indicator" style="text-align: center; margin: 20px 0;">
+                        <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/FotoRJ.png" alt="Foto da primeira ação social no RJ (2019)" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    </div>
+
+                    <h4>Fundação e Início</h4>
+                    <p>A "Domingueira Moto Rock" foi idealizada por seu fundador <strong>Alex Hunter</strong> (Presidente do MG Hunter Nomadis Brasil 8.14) e a Diretora de Eventos <strong>Marcia Leite</strong> (ou Marcia Hunter).  O evento inicial no Rio de Janeiro mobilizou cerca de <strong>3.000 pessoas</strong> e arrecadou <strong>2 toneladas de alimentos, roupas e brinquedos</strong> para comunidades carentes. </p>
+
+                    <h4>Desafio da Pandemia (COVID-19)</h4>
+                    <p>Ao retornar a Brasília em 2020, a pandemia impediu a realização de eventos presenciais.  No início de 2021, o instituto retomou as atividades com apoio do "Todos Contra Covid", distribuindo máscaras, folhetos e álcool em gel, e arrecadou <strong>1 tonelada de alimentos</strong> para diversas instituições em Ceilândia e outras regiões do DF. </p>
+
+                    <div class="photo-indicator" style="text-align: center; margin: 20px 0;">
+                        <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/Fotopandemia.png" alt="Foto da primeira ação social no RJ (2019)" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    </div>
+
+                    <h4>Evolução e Formalização</h4>
+                    <p>Essa experiência motivou a formalização da associação, que hoje atua como <strong>Instituto Tribus</strong>, expandindo seu impacto social no Distrito Federal e Entorno. </p>
+                </div>
+
+                <div class="card">
+                    <h3>2.2. Situação Jurídica e Conformidade Legal</h3>
+                    <p>O Instituto Tribus, também conhecido pela sua Razão Social <strong>Associação Domingueira Moto Rock</strong>, é uma <strong>Organização da Sociedade Civil (OSC)</strong>, sem fins econômicos, de direito privado e de interesse público. </p>
+                    <ul style="margin: 15px 0; padding-left: 30px;">
+                        <li><strong>CNPJ:</strong> 50.903.480/0001-79 </li>
+                        <li><strong>Áreas de Atuação:</strong> Cultural, Artística, Educacional, Lazer, Assistencial, Ambiental, Esportivo e de Saúde. </li>
+                        <li>Organização apartidária, sem vínculos políticos, filosóficos ou religiosos, focada em promover o bem de todos, com base nos princípios da democracia e cidadania, sem discriminação. </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>2.3. Missão, Visão e Valores Institucionais</h3>
+                    
+                    <h4>Missão</h4>
+                    <p>"Trabalhar junto ao indivíduo, à família e à comunidade para <strong>diminuir vulnerabilidades sociais por meio de arte, cultura, lazer, saúde, educação, esporte e ação social</strong>".  Inclui projetos voltados para a valorização de mulheres, crianças, adolescentes, idosos, PCDs, crianças e adolescentes atípicas e animais em situação de abandono. </p>
+
+                    <h4>Visão</h4>
+                    <p>"Ser <strong>referência nacional em projetos sociais e culturais</strong>, reconhecida pela <strong>transparência, resultados e compromisso com a transformação social</strong>".  Busca ser agente transformador da sociedade, proporcionando acesso a projetos e serviços de caráter social, cultural, educacional e profissional, contribuindo para uma sociedade mais justa, igualitária e sustentável. </p>
+
+                    <h4>Valores Institucionais</h4>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <h5>Ética</h5> 
+                            <p>Compromisso com a integridade</p>
+                        </div>
+                        <div class="value-item">
+                            <h5>Respeito às Diferenças</h5> 
+                            <p>Valorização da diversidade</p>
+                        </div>
+                        <div class="value-item">
+                            <h5>Igualdade</h5> 
+                            <p>Oportunidades equitativas</p>
+                        </div>
+                        <div class="value-item">
+                            <h5>Transparência</h5> 
+                            <p>Prestação de contas clara</p>
+                        </div>
+                        <div class="value-item">
+                            <h5>Sustentabilidade</h5> 
+                            <p>Desenvolvimento responsável</p>
+                        </div>
+                        <div class="value-item">
+                            <h5>Cidadania</h5> 
+                            <p>Fortalecimento da participação social</p>
+                        </div>
+                        <div class="value-item">
+                            <h5>Valorização da Parceria</h5> 
+                            <p>Construção de redes colaborativas</p>
+                        </div>
+                        <div class="value-item">
+                            <h5>Inclusão</h5> 
+                            <p>Acesso para todos</p>
+                        </div>
+                        <div class="value-item">
+                            <h5>Compromisso</h5> 
+                            <p></p>
+                        </div>
+                        <div class="value-item">
+                            <h5>Liberdade</h5> 
+                            <p></p>
+                        </div>
+                        <div class="value-item">
+                            <h5>Educação</h5> 
+                            <p></p>
+                        </div>
+                        <div class="value-item">
+                            <h5>Solidariedade</h5> 
+                            <p></p>
+                        </div>
+                        <div class="value-item">
+                            <h5>Acessibilidade às Mudanças</h5> 
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="territorio">
+                <h2 class="section-title">3. TERRITÓRIO DE ATUAÇÃO E IMPACTO SOCIAL</h2>
+                
+                <div class="card">
+                    <h3>3.1. Abrangência Geográfica</h3>
+                    <p>O Instituto Tribus consolidou e expandiu sua atuação no <strong>Distrito Federal e Entorno</strong>, demonstrando expertise em gerenciar operações descentralizadas e estabelecer redes de apoio localizadas. </p>
+                    
+                    <h4>Localidades de Atuação</h4>
+                    <p><strong>Distrito Federal:</strong> Plano Piloto, Ceilândia, Sol Nascente, Samambaia, Cidade Estrutural, Taguatinga </p>
+                    <p><strong>Goiás:</strong> Águas Lindas, Cidade Ocidental, Formosa </p>
+                    <p><strong>Visão Futura:</strong> Expansão para todo o Brasil. </p>
+
+                <div class="photo-indicator" style="text-align: center; margin: 20px 0;">
+                    <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/1.png" 
+                         alt="Mapa das regiões de atuação do Instituto Tribus" 
+                         style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                </div>
+
+                <div class="card">
+                    <h3>3.2. Público-Alvo</h3>
+                    <p>O Instituto Tribus foca em atender grupos em situação de vulnerabilidade, incluindo: </p>
+                    <ul style="margin: 15px 0; padding-left: 30px;">
+                        <li>Mulheres em situação de vulnerabilidade social, desemprego, alimentar e vítimas de violência doméstica. </li>
+                        <li>Crianças e Adolescentes (incluindo atípicas). </li>
+                        <li>Jovens e adultos. </li>
+                        <li>Pessoas com Deficiência (PCDs). </li>
+                        <li>Idosos. </li>
+                        <li>Famílias em situação de vulnerabilidade socioeconômica. </li>
+                        <li>Animais em situação de abandono. </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>3.3. Resultados Quantificáveis e Impacto Global</h3>
+                    <p>Desde 2021, o Instituto Tribus tem impactado significativamente diversas famílias, instituições e comunidades: </p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">15.000+</div>
+                            <div class="stat-label">Pessoas Atendidas</div> 
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Toneladas de Alimentos</div> 
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Cursos e Oficinas</div> 
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label">Instituições Beneficiadas</div> 
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">1.500</div>
+                            <div class="stat-label">Pessoas atendidas em vulnerabilidade alimentar</div> 
+                        </div>
+                         <div class="stat-card">
+                            <div class="stat-number">15</div>
+                            <div class="stat-label">Instituições Parceiras Atuais</div> 
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3.000 a 5.000</div>
+                            <div class="stat-label">Público de eventos por ação cultural</div> 
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24</div>
+                            <div class="stat-label">Apresentações públicas anuais (Musicalização)</div> 
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">80%</div>
+                            <div class="stat-label">Taxa de Empregabilidade (Drones)</div> 
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">R$ 1.200</div>
+                            <div class="stat-label">Renda Média Gerada (Culinária)</div> 
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15%</div>
+                            <div class="stat-label">Redução em infrações de trânsito (Acelera DF)</div> 
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">60%</div>
+                            <div class="stat-label">Redução nos gastos com manutenção doméstica</div> 
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">45</div>
+                            <div class="stat-label">Artistas Locais Beneficiados (Festival Tribus)</div> 
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">30</div>
+                            <div class="stat-label">Empreendedores Participantes (Festival Tribus)</div> 
+                        </div>
+                    </div>
+
+                    <div class="photo-indicator">
+                        📸 INSERIR AQUI: Gráficos e infográficos dos resultados + fotos dos beneficiários 
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="projetos">
+                <h2 class="section-title">4. PROJETOS E PROGRAMAS DE DESTAQUE</h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Domingueira Moto Rock</h3> 
+                            <p>Evento mensal - Pedra angular do Instituto</p> 
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Descrição:</strong> Evento mensal que mobiliza cerca de 3.000 pessoas, combinando cultura motociclística e musical com arrecadação de doações para comunidades vulneráveis.  Realizado todo 2º domingo de cada mês na Feira da Torre de TV em Brasília. </p>
+                            
+                            <div class="project-photo-placeholder">
+                                📸 INSERIR FOTOS: Evento na Torre de TV, motos, público, arrecadação de doações, distribuição 
+                            </div>
+                            
+                            <h4>Resultados Quantitativos:</h4>
+                            <ul>
+                                <li>3.000 pessoas mobilizadas por evento </li>
+                                <li>2+ toneladas de doações arrecadadas mensalmente </li>
+                                <li>12 eventos realizados por ano </li>
+                                <li>Impactando 36.000 pessoas anualmente </li>
+                            </ul>
+                            <h4>Capacidades Técnicas Demonstradas:</h4> 
+                            <ul>
+                                <li>Gestão de Eventos de Grande Porte</li>
+                                <li>Logística Humanitária (coleta, triagem e distribuição de doações)</li>
+                                <li>Articulação e Parceria</li>
+                                <li>Mobilização Comunitária</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Festival Tribus</h3> 
+                            <p>Festival cultural itinerante</p>
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Descrição:</strong> Festival cultural itinerante nas periferias do Distrito Federal, promovendo inclusão social, economia criativa local e acesso à cultura com programação diversificada.  Visa promover a sustentabilidade econômica nos setores de cultura, turismo e economia criativa. </p>
+                            
+                            <div class="project-photo-placeholder">
+                                📸 INSERIR FOTOS: Shows, apresentações teatrais, oficinas de arte, feira de artesanato, espaço kids 
+                            </div>
+                            
+                            <h4>Resultados Alcançados:</h4> 
+                            <ul>
+                                <li>45 artistas locais beneficiados</li>
+                                <li>5.000 pessoas de público alcançado</li>
+                                <li>30 empreendedores participantes</li>
+                                <li>12 oficinas realizadas</li>
+                            </ul>
+                            <h4>Capacidades Técnicas Demonstradas:</h4> 
+                            <ul>
+                                <li>Planejamento e Gestão de Eventos Itinerantes</li>
+                                <li>Curadoria Artística e Cultural</li>
+                                <li>Fomento à Economia Criativa Local</li>
+                                <li>Educação e Conscientização</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Projeto Acelera DF</h3> 
+                            <p>Educação viária e cultura automotiva</p>
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Descrição:</strong> Série de vídeos sobre cultura automotiva no DF, combinando entretenimento com educação viária e conscientização para jovens.  Inclui aulas práticas de mecânica e personalização. </p>
+                            
+                            <div class="project-photo-placeholder">
+                                📸 INSERIR FOTOS: Gravações dos vídeos, carros antigos, superesportivos, aulas práticas de mecânica 
+                            </div>
+                            
+                            <h4>Resultados de Impacto:</h4> 
+                            <ul>
+                                <li>24 episódios produzidos com qualidade profissional</li>
+                                <li>50.000+ visualizações</li>
+                                <li>15.000 jovens alcançados diretamente</li>
+                                <li>15% redução em infrações de trânsito na região</li>
+                            </ul>
+                             <h4>Capacidades Técnicas Demonstradas:</h4> 
+                            <ul>
+                                <li>Produção Audiovisual Profissional</li>
+                                <li>Educação Viária Especializada</li>
+                                <li>Organização de Eventos Temáticos</li>
+                                <li>Engajamento de Público Jovem</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>CineMaker</h3> 
+                            <p>Centro audiovisual completo</p>
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Descrição:</strong> Centro audiovisual completo com estúdios e equipamentos para cursos, gravações, lives, transmissões e workshops, democratizando o acesso à produção de conteúdo.  Visa capacitar profissionais e estudantes e oferecer infraestrutura acessível. </p>
+                            
+                            <div class="project-photo-placeholder">
+                                📸 INSERIR FOTOS: Estúdio de gravação, equipamentos profissionais, ilha de edição, estúdio de áudio 
+                            </div>
+                            
+                            <h4>Público Atendido:</h4> 
+                            <ul>
+                                <li>60% Jovens</li>
+                                <li>15% Coletivos culturais</li>
+                                <li>15% ONGs parceiras</li>
+                                <li>10% Escolas públicas</li>
+                            </ul>
+                            <h4>Capacidades Técnicas Demonstradas:</h4> 
+                            <ul>
+                                <li>Gestão de Infraestrutura Complexa</li>
+                                <li>Programas de Capacitação Abrangentes</li>
+                                <li>Suporte a Coletivos e ONGs</li>
+                                <li>Inclusão Digital e Tecnológica</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Curso de Pilotagem de Drones</h3> 
+                            <p>Capacitação tecnológica avançada</p>
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Descrição:</strong> Capacitação em teoria e prática de pilotagem de drones, com foco em aplicações profissionais e sociais.  Uma das principais carreiras em ascensão no mercado de trabalho. </p>
+                            
+                            <div class="project-photo-placeholder">
+                                📸 INSERIR FOTOS: Aulas práticas com drones, alunos pilotando, certificações, formandos no mercado 
+                            </div>
+                            
+                            <h4>Resultados:</h4> 
+                            <ul>
+                                <li>Carga Horária: 60 horas (teoria e prática)</li>
+                                <li>50+ profissionais capacitados</li>
+                                <li>50% de aulas práticas</li>
+                                <li>80% de taxa de empregabilidade dos formados</li>
+                            </ul>
+                            <h4>Capacidades Técnicas Demonstradas:</h4> 
+                            <ul>
+                                <li>Formação em Tecnologia Avançada</li>
+                                <li>Metodologia de Ensino Prática</li>
+                                <li>Visão de Mercado e Inovação</li>
+                                <li>Inclusão Digital e Profissional</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Culinária e Gastronomia Social (Projeto Cantina Social em Movimento)</h3> 
+                            <p>Geração de renda para mulheres</p>
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Descrição:</strong> Curso para geração de renda para mulheres em vulnerabilidade social, ensinando técnicas culinárias e gestão de pequenos negócios.  Busca transformar vidas através do aprendizado para empregabilidade e renda. </p>
+                            
+                            <div class="project-photo-placeholder">
+                                📸 INSERIR FOTOS: Aulas de culinária, mulheres cozinhando, produtos finais, negócios criados 
+                            </div>
+                            
+                            <h4>Resultados:</h4> 
+                            <ul>
+                                <li>Carga Horária: 80 horas (ou 60 horas)</li>
+                                <li>100+ mulheres capacitadas</li>
+                                <li>20+ negócios criados</li>
+                                <li>R$ 1.200 de renda média gerada mensalmente por participante</li>
+                            </ul>
+                            <h4>Capacidades Técnicas Demonstradas:</h4> 
+                            <ul>
+                                <li>Fomento ao Empreendedorismo Social</li>
+                                <li>Capacitação Profissional Efetiva</li>
+                                <li>Inclusão Social e Autonomia Feminina</li>
+                                <li>Desenvolvimento de Habilidades de Gestão</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Curso de Bartender Black Hunter</h3> 
+                            <p>Profissionalização e inserção no mercado</p>
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Descrição:</strong> Capacitação em técnicas de coquetelaria para mulheres, com foco em profissionalização e inserção no mercado de trabalho.  Devolve a dignidade de sustentarem suas famílias. </p>
+                            
+                            <div class="project-photo-placeholder">
+                                📸 INSERIR FOTOS: Aulas de coquetelaria, mulheres preparando drinks, eventos, formandas trabalhando 
+                            </div>
+                            
+                            <h4>Resultados:</h4> 
+                            <ul>
+                                <li>Carga Horária: 30 horas intensivas (ou 80 horas)</li>
+                                <li>80+ profissionais certificadas</li>
+                                <li>50+ receitas clássicas e autorais aprendidas</li>
+                                <li>75% de taxa de inserção no mercado de trabalho</li>
+                            </ul>
+                            <h4>Capacidades Técnicas Demonstradas:</h4> 
+                            <ul>
+                                <li>Formação Profissional Direcionada</li>
+                                <li>Parceria com o Setor Privado</li>
+                                <li>Análise de Demanda de Mercado</li>
+                                <li>Empoderamento Feminino</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Manutenção para Mulheres</h3> 
+                            <p>Autonomia e economia doméstica</p>
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Descrição:</strong> Oferece noções de elétrica, hidráulica e pequenos reparos domésticos, promovendo autonomia e economia doméstica.  Quebra estereótipos de gênero e promove a independência feminina. </p>
+                            
+                            <div class="project-photo-placeholder">
+                                📸 INSERIR FOTOS: Mulheres em aulas práticas de elétrica/hidráulica, realizando reparos, exemplos de economia 
+                            </div>
+                            
+                            <h4>Resultados:</h4> 
+                            <ul>
+                                <li>Carga Horária: 40 horas com 70% de aulas práticas</li>
+                                <li>120+ mulheres capacitadas</li>
+                                <li>Redução de 60% nos gastos com manutenção</li>
+                            </ul>
+                            <h4>Capacidades Técnicas Demonstradas:</h4> 
+                            <ul>
+                                <li>Desenvolvimento de Programas de Capacitação Específicos</li>
+                                <li>Promoção da Autonomia Feminina</li>
+                                <li>Quebra de Estereótipos de Gênero</li>
+                                <li>Educação para a Sustentabilidade Doméstica</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Musicalização Infantil (Moto Rock do Bem)</h3> 
+                            <p>Arte como ferramenta de transformação</p>
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Descrição:</strong> Programa que oferece iniciação musical, canto coral e construção de instrumentos para crianças de comunidades vulneráveis.  Utiliza a arte como ferramenta de transformação social. </p>
+                            
+                            <div class="project-photo-placeholder">
+                                📸 INSERIR FOTOS: Crianças nas aulas de música, canto coral, construindo instrumentos, apresentações 
+                            </div>
+                            
+                            <h4>Resultados:</h4> 
+                            <ul>
+                                <li>Faixa Etária: Crianças de 5 a 12 anos</li>
+                                <li>200+ beneficiários diretos</li>
+                                <li>Duração: 6 meses por ciclo</li>
+                                <li>24 apresentações públicas anuais</li>
+                            </ul>
+                            <h4>Capacidades Técnicas Demonstradas:</h4> 
+                            <ul>
+                                <li>Desenvolvimento de Programas Educacionais Artísticos</li>
+                                <li>Promoção do Desenvolvimento Infantil Integral</li>
+                                <li>Utilização da Arte como Ferramenta Social</li>
+                                <li>Engajamento Comunitário com Foco em Crianças</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Produção de Podcast (Projeto Vozes do Futuro)</h3> 
+                            <p>Capacitação em conteúdo digital</p>
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Descrição:</strong> Curso que abrange gravação, edição, publicação e monetização, capacitando os participantes para criar conteúdo digital de qualidade.  Estimula a criatividade e o protagonismo na comunicação digital. </p>
+                            
+                            <div class="project-photo-placeholder">
+                                📸 INSERIR FOTOS: Alunos em aulas de podcast, gravando, editando, programas lançados 
+                            </div>
+                            
+                            <h4>Resultados:</h4> 
+                            <ul>
+                                <li>Carga Horária: 50 horas teórico-práticas</li>
+                                <li>80+ criadores de conteúdo formados</li>
+                                <li>25 programas originais lançados</li>
+                                <li>60% dos participantes gerando renda</li>
+                            </ul>
+                            <h4>Capacidades Técnicas Demonstradas:</h4> 
+                            <ul>
+                                <li>Formação em Mídias Digitais e Comunicação</li>
+                                <li>Fomento à Criação de Conteúdo Original</li>
+                                <li>Análise de Mercado de Mídia Digital</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Projeto Conecte-se e Cresça</h3> 
+                            <p>Marketing digital e empreendedorismo local</p>
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Descrição:</strong> Oferecerá uma plataforma de marketing digital gratuito para pequenos e médios empresários locais, com foco no uso estratégico das redes sociais e produção de vídeos profissionais.  Inclui palestras educativas para crianças sobre empreendedorismo e uso responsável da internet. </p>
+                            
+                            <div class="project-photo-placeholder">
+                                📸 INSERIR FOTOS: Empresários em palestras, equipes produzindo vídeos, crianças em atividades de educação digital 
+                            </div>
+                            
+                            <h4>Resultados Esperados:</h4> 
+                            <ul>
+                                <li>Aumento nas vendas e maior visibilidade local para empresários</li>
+                                <li>Capacitação de ao menos 200 alunos sobre uso positivo das redes sociais e empreendedorismo</li>
+                                <li>Fortalecimento da economia local</li>
+                            </ul>
+                            <h4>Capacidades Técnicas Demonstradas:</h4> 
+                            <ul>
+                                <li>Marketing Digital Estratégico</li>
+                                <li>Produção de Conteúdo Audiovisual para Empresas</li>
+                                <li>Educação Digital e Empreendedorismo</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Estúdio Comunitário Vozes da Quebrada (Projeto Futuro)</h3> 
+                            <p>Estúdio de gravação musical acessível</p>
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Descrição:</strong> Projeto futuro que visa criar um estúdio de gravação musical acessível, profissional e gratuito para jovens artistas da periferia. </p>
+                            
+                            <div class="project-photo-placeholder">
+                                📸 INSERIR FOTOS: Maquete ou render do estúdio, jovens em oficinas de música, artistas locais gravando 
+                            </div>
+                            
+                            <h4>Resultados Esperados:</h4> 
+                            <ul>
+                                <li>Gravação de pelo menos 100 músicas no primeiro ano</li>
+                                <li>Formação de 80 jovens em curso técnico</li>
+                                <li>Criação de uma coletânea anual com 20 faixas</li>
+                                <li>Redução da vulnerabilidade social através da arte</li>
+                                <li>Geração de oportunidades e visibilidade</li>
+                            </ul>
+                            <h4>Capacidades Técnicas Demonstradas:</h4> 
+                            <ul>
+                                <li>Gestão de Espaços Culturais</li>
+                                <li>Produção Musical e Audiovisual</li>
+                                <li>Capacitação em Áreas Artísticas e Técnicas</li>
+                                <li>Fomento ao Empreendedorismo Cultural</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Projeto Distrito Animal (Em Estudo Preliminar)</h3> 
+                            <p>Abrigo para animais abandonados</p>
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Descrição:</strong> Projeto para abrigo de animais abandonados, em nível de estudo preliminar, que garanta o bem-estar e atenda às necessidades técnicas de referência, utilizando o conceito de arquitetura sustentável. </p>
+                            
+                            <div class="project-photo-placeholder">
+                                📸 INSERIR FOTOS: Conceito de arquitetura sustentável, equipe de resgate, animais sendo cuidados 
+                            </div>
+                            
+                            <h4>Objetivos:</h4> 
+                            <ul>
+                                <li>Buscar informações sobre animais abandonados</li>
+                                <li>Fazer o resgate com equipe de especialistas</li>
+                                <li>Ser um refúgio seguro com política de captura seletiva</li>
+                                <li>Local de passagem para recolocação em lares definitivos</li>
+                                <li>Núcleo de referência em programas de cuidado, controle e bem-estar</li>
+                            </ul>
+                            <h4>Capacidades Técnicas Demonstradas:</h4> 
+                            <ul>
+                                <li>Planejamento e Gestão de Projetos Sociais (Foco Ambiental)</li>
+                                <li>Articulação com Especialistas e Redes de Resgate</li>
+                                <li>Desenvolvimento de Políticas de Bem-Estar Animal</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="section" id="parcerias">
+                <h2 class="section-title">5. PARCERIAS E ARTICULAÇÃO INSTITUCIONAL</h2>
+                <div class="intro-text">
+                    A capacidade do Instituto Tribus de gerar impacto social significativo é amplificada por sua robusta rede de parcerias e habilidade em articular-se com diversas instituições. 
+                </div>
+                
+                <div class="card">
+                    <h3>5.1. Parceiros Governamentais</h3>
+                    <ul class="partners-list">
+                        <li>Serviço Social do Comércio (SESC) </li>
+                        <li>Polícia Militar do Distrito Federal (PMDF) </li>
+                        <li>Polícia Civil do Distrito Federal (PCDF) </li>
+                        <li>Governo do Distrito Federal (GDF) </li>
+                        <li>Unidades Básicas de Saúde (UBS) de Ceilândia (parceria para prevenção de DSTs) </li>
+                        <li>Todos Contra Covid (apoio durante a pandemia) </li>
+                        <li>Polícia Rodoviária Federal (Potencial Parceira do Projeto Acelera DF) </li>
+                        <li>Departamento de Trânsito (Potencial Parceira do Projeto Acelera DF) </li>
+                    </ul>
+                    <div class="photo-indicator">
+                        📸 INSERIR AQUI: Fotos com representantes dos parceiros governamentais em eventos ou ações conjuntas
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>5.2. Instituições Beneficiadas e Parceiras</h3>
+                    <ul class="partners-list">
+                        <li>APAED (Associação de Pais e Amigos dos Excepcionais) </li>
+                        <li>Lar dos Idosos Luiza de Marillac </li>
+                        <li>Instituto Carinho </li>
+                        <li>Instituto Seja Amor </li>
+                        <li>Associação dos Idosos de Ceilândia </li>
+                        <li>Abrigo dos Excepcionais de Ceilândia </li>
+                        <li>Creche Leon Dennis e Creche Vovó Luzimar </li>
+                        <li>Projeto Social Um Dia Sem Fome na Santa Luzia, Cidade Estrutural </li>
+                        <li>CEOC </li>
+                    </ul>
+                    <div class="photo-indicator">
+                        📸 INSERIR AQUI: Fotos das instituições beneficiadas, com voluntários do Instituto Tribus interagindo
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="transparencia">
+                <h2 class="section-title">6. TRANSPARÊNCIA E GOVERNANÇA</h2>
+                <div class="intro-text">
+                    O Instituto Tribus pauta sua atuação pela máxima transparência e rigor na governança, elementos essenciais para a construção de confiança junto aos parceiros, beneficiários e sociedade em geral. 
+                </div>
+                <div class="card">
+                    <h3>Documentos Disponíveis para Consulta:</h3>
+                    <ul style="margin: 15px 0; padding-left: 30px;">
+                        <li>Estatuto Social (incluindo o da "Associação Domingueira Moto Rock") </li>
+                        <li>Relatórios de Atividades </li>
+                        <li>Prestação de Contas </li>
+                        <li>Plano de Trabalho Anual </li>
+                        <li>Certificados e Licenças </li>
+                    </ul>
+                    <div class="photo-indicator">
+                        📸 INSERIR AQUI: Pequenas imagens de ícones representando os documentos ou uma breve imagem de um relatório aberto
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="contato">
+                <h2 class="section-title">7. INFORMAÇÕES DE CONTATO</h2>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h4>Informações Institucionais</h4>
+                        <div class="contact-item">
+                            <span class="icon">📧</span> <a href="mailto:contato@institutotribus.org.br">contato@institutotribus.org.br</a> <br>
+                            (ou presidentedomingueira@gmail.com)
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">🌐</span> <a href="https://institutotribus.netlify.app/" target="_blank">https://institutotribus.netlify.app/</a> <br>
+                            <a href="http://www.institutotribus.com.br" target="_blank">www.institutotribus.com.br</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📍</span> Brasília, DF <br>
+                            Rua QNP 13 CONJ H CASA 15 - CEILÂNDIA NORTE, CEP: 72241-308 
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <h4>Telefones para Contato</h4>
+                        <div class="contact-item">
+                            <span class="icon">📞</span> <strong>Alex Hunter (Presidente):</strong> <a href="tel:+5561991411921">(61) 99141-1921</a> 
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📞</span> <strong>Marcia Leite (Coordenadora de Projetos):</strong> <a href="tel:+5561994401720">(61) 99440-1720</a> 
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📞</span> <strong>Marcelo Santos (Secretário):</strong> <a href="tel:+5561985612068">(61) 98561-2068</a> 
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <h4>Redes Sociais</h4>
+                        <div class="social-media-icons">
+                            <a href="https://www.instagram.com/institutotribus/" target="_blank">Instagram: @institutotribus</a><br> 
+                            <a href="https://www.instagram.com/domingueira_moto_rock/" target="_blank">Instagram: @domingueira_moto_rock</a><br> 
+                            <a href="https://www.facebook.com/institutotribus/" target="_blank">Facebook: Instituto Tribus</a><br> 
+                            <a href="https://www.facebook.com/DomingueiraMotorock/" target="_blank">Facebook: Domingueira Motorock</a><br> 
+                            <a href="https://www.linkedin.com/company/instituto-tribus/" target="_blank">LinkedIn: Instituto Tribus</a><br> 
+                            <a href="https://www.tiktok.com/@domingueirra_moto_rock" target="_blank">TikTok: @domingueirra_moto_rock</a><br> 
+                            <a href="https://www.youtube.com/@domingueiramotorock3358" target="_blank">YouTube: @domingueiramotorock3358</a> 
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="apoio">
+                <h2 class="section-title">8. APOIO E VISÃO DE FUTURO</h2>
+                <div class="card">
+                    <h3>Seja Nosso Parceiro</h3>
+                    <p>"A doação transforma um ato de amor em um ato concreto, seja um agente transformador, seja uma empresa parceira".  Empresas podem ser padrinhos ou madrinhas de projetos, com apoio financeiro dedutível de imposto de renda, ou compartilhando habilidades. </p>
+                    
+                    <div class="financial-info">
+                        <h4>Dados Bancários para Doação:</h4> 
+                        <p><strong>Banco:</strong> 461 - Banco Asaas</p> 
+                        <p><strong>Agência:</strong> 0001</p> 
+                        <p><strong>Conta:</strong> 3270348-0</p> 
+                        <p><strong>CNPJ:</strong> 50.903.480/0001-79</p> 
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Visão de Futuro</h3>
+                    <p>"Nossa visão de futuro é alcançar e expandir para que possamos construir um lugar melhor para se viver".  As metas incluem fechar um calendário anual de ações, criar um plano de negócios social para finanças responsáveis e sustentáveis, trabalhar o marketing para ampliação e engajamento, e desenvolver projetos inclusivos e sustentáveis. </p>
+                    <p class="footer-quote">"Grandes batalhas são dadas a grandes guerreiros. E nós não lutamos sozinhos. Somos uma tribo, somos o Instituto Tribus!" </p>
+                    <p class="intro-text">Transformando realidades através da inovação social e excelência técnica. </p>
+                </div>
+            </section>
+
         </div>
 
-        <h1>PORTFÓLIO DE CAPACIDADE TÉCNICA</h1>
-        <div class="subtitle">Excelência e Inovação na Promoção do Desenvolvimento Social</div>
-        <div class="org-name">INSTITUTO TRIBUS</div>
-        <div class="details">
-          <strong>CNPJ:</strong> 50.903.480/0001-79 <br>
-          <strong>Brasília, DF - Junho de 2025</strong>
-        </div>
-      </div>
-    </header>
-
-    <div class="content">
-      <section class="section" id="prefacio">
-        <h2 class="section-title">1. PREFÁCIO</h2>
-        <div class="intro-text">
-          Este Portfólio de Capacidade Técnica é um documento abrangente que visa apresentar a <strong>expertise, a experiência e a infraestrutura do Instituto Tribus</strong> na concepção, gestão e execução de projetos de impacto social. Elaborado com o rigor e a formalidade exigidos para interações com órgãos governamentais, este compêndio detalha a trajetória, os pilares e as realizações concretas de uma organização comprometida com a <strong>transformação de realidades por meio da inovação social e da excelência técnica</strong>.
-        </div>
-      </section>
-
-      <section class="section" id="apresentacao">
-        <h2 class="section-title">2. APRESENTAÇÃO INSTITUCIONAL</h2>
-
-        <div class="card">
-          <h3>2.1. Histórico e Gênese do Instituto Tribus</h3>
-          <p>O Instituto Tribus, formalmente estabelecido como uma <strong>Organização da Sociedade Civil (OSC) sem fins lucrativos</strong>, tem suas raízes em um movimento espontâneo de solidariedade e engajamento comunitário. Sua gênese remonta a <strong>meados de 2019</strong>, com a realização da <strong>1ª Ação Social "Domingueira Moto Rock" no Rio de Janeiro</strong>, em Duque de Caxias, na Vila São Luiz. </p>
-
-          <div class="photo-indicator" style="text-align: center; margin: 20px 0;">
-            <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/FotoRJ.png" alt="Foto da primeira ação social no RJ (2019)" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-          </div>
-
-          <h4>Fundação e Início</h4>
-          <p>A "Domingueira Moto Rock" foi idealizada por seu fundador <strong>Alex Hunter</strong> (Presidente do MG Hunter Nomadis Brasil 8.14) e a Diretora de Eventos <strong>Marcia Leite</strong> (ou Marcia Hunter). O evento inicial no Rio de Janeiro mobilizou cerca de <strong>3.000 pessoas</strong> e arrecadou <strong>2 toneladas de alimentos, roupas e brinquedos</strong> para comunidades carentes. </p>
-
-          <h4>Desafio da Pandemia (COVID-19)</h4>
-          <p>Ao retornar a Brasília em 2020, a pandemia impediu a realização de eventos presenciais. No início de 2021, o instituto retomou as atividades com apoio do "Todos Contra Covid", distribuindo máscaras, folhetos e álcool em gel, e arrecadou <strong>1 tonelada de alimentos</strong> para diversas instituições em Ceilândia e outras regiões do DF. </p>
-
-          <div class="photo-indicator" style="text-align: center; margin: 20px 0;">
-            <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/Fotopandemia.png" alt="Foto da primeira ação social no RJ (2019)" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-          </div>
-
-          <h4>Evolução e Formalização</h4>
-          <p>Essa experiência motivou a formalização da associação, que hoje atua como <strong>Instituto Tribus</strong>, expandindo seu impacto social no Distrito Federal e Entorno. </p>
-        </div>
-
-        <div class="card">
-          <h3>2.2. Situação Jurídica e Conformidade Legal</h3>
-          <p>O Instituto Tribus, também conhecido pela sua Razão Social <strong>Associação Domingueira Moto Rock</strong>, é uma <strong>Organização da Sociedade Civil (OSC)</strong>, sem fins econômicos, de direito privado e de interesse público. </p>
-          <ul style="margin: 15px 0; padding-left: 30px;">
-            <li><strong>CNPJ:</strong> 50.903.480/0001-79 </li>
-            <li><strong>Áreas de Atuação:</strong> Cultural, Artística, Educacional, Lazer, Assistencial, Ambiental, Esportivo e de Saúde. </li>
-            <li>Organização apartidária, sem vínculos políticos, filosóficos ou religiosos, focada em promover o bem de todos, com base nos princípios da democracia e cidadania, sem discriminação. </li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>2.3. Missão, Visão e Valores Institucionais</h3>
-
-          <h4>Missão</h4>
-          <p>"Trabalhar junto ao indivíduo, à família e à comunidade para <strong>diminuir vulnerabilidades sociais por meio de arte, cultura, lazer, saúde, educação, esporte e ação social</strong>". Inclui projetos voltados para a valorização de mulheres, crianças, adolescentes, idosos, PCDs, crianças e adolescentes atípicas e animais em situação de abandono. </p>
-
-          <h4>Visão</h4>
-          <p>"Ser <strong>referência nacional em projetos sociais e culturais</strong>, reconhecida pela <strong>transparência, resultados e compromisso com a transformação social</strong>". Busca ser agente transformador da sociedade, proporcionando acesso a projetos e serviços de caráter social, cultural, educacional e profissional, contribuindo para uma sociedade mais justa, igualitária e sustentável. </p>
-
-          <h4>Valores Institucionais</h4>
-          <div class="values-grid">
-            <div class="value-item">
-              <h5>Ética</h5>
-              <p>Compromisso com a integridade</p>
-            </div>
-            <div class="value-item">
-              <h5>Respeito às Diferenças</h5>
-              <p>Valorização da diversidade</p>
-            </div>
-            <div class="value-item">
-              <h5>Igualdade</h5>
-              <p>Oportunidades equitativas</p>
-            </div>
-            <div class="value-item">
-              <h5>Transparência</h5>
-              <p>Prestação de contas clara</p>
-            </div>
-            <div class="value-item">
-              <h5>Sustentabilidade</h5>
-              <p>Desenvolvimento responsável</p>
-            </div>
-            <div class="value-item">
-              <h5>Cidadania</h5>
-              <p>Fortalecimento da participação social</p>
-            </div>
-            <div class="value-item">
-              <h5>Valorização da Parceria</h5>
-              <p>Construção de redes colaborativas</p>
-            </div>
-            <div class="value-item">
-              <h5>Inclusão</h5>
-              <p>Acesso para todos</p>
-            </div>
-            <div class="value-item">
-              <h5>Compromisso</h5>
-              <p></p>
-            </div>
-            <div class="value-item">
-              <h5>Liberdade</h5>
-              <p></p>
-            </div>
-            <div class="value-item">
-              <h5>Educação</h5>
-              <p></p>
-            </div>
-            <div class="value-item">
-              <h5>Solidariedade</h5>
-              <p></p>
-            </div>
-            <div class="value-item">
-              <h5>Acessibilidade às Mudanças</h5>
-              <p></p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="territorio">
-        <h2 class="section-title">3. TERRITÓRIO DE ATUAÇÃO E IMPACTO SOCIAL</h2>
-
-        <div class="card">
-          <h3>3.1. Abrangência Geográfica</h3>
-          <p>O Instituto Tribus consolidou e expandiu sua atuação no <strong>Distrito Federal e Entorno</strong>, demonstrando expertise em gerenciar operações descentralizadas e estabelecer redes de apoio localizadas. </p>
-
-          <h4>Localidades de Atuação</h4>
-          <p><strong>Distrito Federal:</strong> Plano Piloto, Ceilândia, Sol Nascente, Samambaia, Cidade Estrutural, Taguatinga </p>
-          <p><strong>Goiás:</strong> Águas Lindas, Cidade Ocidental, Formosa </p>
-          <p><strong>Visão Futura:</strong> Expansão para todo o Brasil. </p>
-
-          <div class="photo-indicator" style="text-align: center; margin: 20px 0;">
-            <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/1.png" alt="Mapa das regiões de atuação do Instituto Tribus" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-          </div>
-        </div>
-        <div class="card">
-          <h3>3.2. Público-Alvo</h3>
-          <p>O Instituto Tribus foca em atender grupos em situação de vulnerabilidade, incluindo: </p>
-          <ul style="margin: 15px 0; padding-left: 30px;">
-            <li>Mulheres em situação de vulnerabilidade social, desemprego, alimentar e vítimas de violência doméstica. </li>
-            <li>Crianças e Adolescentes (incluindo atípicas). </li>
-            <li>Jovens e adultos. </li>
-            <li>Pessoas com Deficiência (PCDs). </li>
-            <li>Idosos. </li>
-            <li>Famílias em situação de vulnerabilidade socioeconômica. </li>
-            <li>Animais em situação de abandono. </li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>3.3. Resultados Quantificáveis e Impacto Global</h3>
-          <p>Desde 2021, o Instituto Tribus tem impactado significativamente diversas famílias, instituições e comunidades: </p>
-
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-number">15.000+</div>
-              <div class="stat-label">Pessoas Atendidas</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">50+</div>
-              <div class="stat-label">Toneladas de Alimentos</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">10+</div>
-              <div class="stat-label">Cursos e Oficinas</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">8+</div>
-              <div class="stat-label">Instituições Beneficiadas</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">1.500</div>
-              <div class="stat-label">Pessoas atendidas em vulnerabilidade alimentar</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">15</div>
-              <div class="stat-label">Instituições Parceiras Atuais</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">3.000 a 5.000</div>
-              <div class="stat-label">Público de eventos por ação cultural</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">24</div>
-              <div class="stat-label">Apresentações públicas anuais (Musicalização)</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">80%</div>
-              <div class="stat-label">Taxa de Empregabilidade (Drones)</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">R$ 1.200</div>
-              <div class="stat-label">Renda Média Gerada (Culinária)</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">15%</div>
-              <div class="stat-label">Redução em infrações de trânsito (Acelera DF)</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">60%</div>
-              <div class="stat-label">Redução nos gastos com manutenção doméstica</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">45</div>
-              <div class="stat-label">Artistas Locais Beneficiados (Festival Tribus)</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">30</div>
-              <div class="stat-label">Empreendedores Participantes (Festival Tribus)</div>
-            </div>
-          </div>
-
-          <div class="photo-indicator">
-            📸 INSERIR AQUI: Gráficos e infográficos dos resultados + fotos dos beneficiários
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="projetos">
-        <h2 class="section-title">4. PROJETOS E PROGRAMAS DE DESTAQUE</h2>
-
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Domingueira Moto Rock</h3>
-              <p>Evento mensal - Pedra angular do Instituto</p>
-            </div>
-            <div class="project-content">
-              <p><strong>Descrição:</strong> Evento mensal que mobiliza cerca de 3.000 pessoas, combinando cultura motociclística e musical com arrecadação de doações para comunidades vulneráveis. Realizado todo 2º domingo de cada mês na Feira da Torre de TV em Brasília. </p>
-
-              <div class="project-photo-placeholder">
-                📸 INSERIR FOTOS: Evento na Torre de TV, motos, público, arrecadação de doações, distribuição
-              </div>
-
-              <h4>Resultados Quantitativos:</h4>
-              <ul>
-                <li>3.000 pessoas mobilizadas por evento </li>
-                <li>2+ toneladas de doações arrecadadas mensalmente </li>
-                <li>12 eventos realizados por ano </li>
-                <li>Impactando 36.000 pessoas anualmente </li>
-              </ul>
-              <h4>Capacidades Técnicas Demonstradas:</h4>
-              <ul>
-                <li>Gestão de Eventos de Grande Porte</li>
-                <li>Logística Humanitária (coleta, triagem e distribuição de doações)</li>
-                <li>Articulação e Parceria</li>
-                <li>Mobilização Comunitária</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="project-card">
-                        <div class="project-header">
-                            <h3>Festival Tribus</h3> 
-                            <p>Festival cultural itinerante</p>
-                        </div>
-                        <div class="project-content">
-                            <p><strong>Descrição:</strong> Festival cultural itinerante nas periferias do Distrito Federal, promovendo inclusão social, economia criativa local e acesso à cultura com programação diversificada.  Visa promover a sustentabilidade econômica nos setores de cultura, turismo e economia criativa. </p>
-                            
-                            <div class="project-photo-placeholder">
-                                📸 INSERIR FOTOS: Shows, apresentações teatrais, oficinas de arte, feira de artesanato, espaço kids 
-                            </div>
-                            
-                            <h4>Resultados Alcançados:</h4> 
-                            <ul>
-                                <li>45 artistas locais beneficiados</li>
-                                <li>5.000 pessoas de público alcançado</li>
-                                <li>30 empreendedores participantes</li>
-                                <li>12 oficinas realizadas</li>
-                            </ul>
-                            <h4>Capacidades Técnicas Demonstradas:</h4> 
-                            <ul>
-                                <li>Planejamento e Gestão de Eventos Itinerantes</li>
-                                <li>Curadoria Artística e Cultural</li>
-                                <li>Fomento à Economia Criativa Local</li>
-                                <li>Educação e Conscientização</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Projeto Acelera DF</h3> 
-                            <p>Educação viária e cultura automotiva</p>
-                        </div>
-                        <div class="project-content">
-                            <p><strong>Descrição:</strong> Série de vídeos sobre cultura automotiva no DF, combinando entretenimento com educação viária e conscientização para jovens.  Inclui aulas práticas de mecânica e personalização. </p>
-                            
-                            <div class="project-photo-placeholder">
-                                📸 INSERIR FOTOS: Gravações dos vídeos, carros antigos, superesportivos, aulas práticas de mecânica 
-                            </div>
-                            
-                            <h4>Resultados de Impacto:</h4> 
-                            <ul>
-                                <li>24 episódios produzidos com qualidade profissional</li>
-                                <li>50.000+ visualizações</li>
-                                <li>15.000 jovens alcançados diretamente</li>
-                                <li>15% redução em infrações de trânsito na região</li>
-                            </ul>
-                             <h4>Capacidades Técnicas Demonstradas:</h4> 
-                            <ul>
-                                <li>Produção Audiovisual Profissional</li>
-                                <li>Educação Viária Especializada</li>
-                                <li>Organização de Eventos Temáticos</li>
-                                <li>Engajamento de Público Jovem</li>
-                            </ul>
-                        </div>
-                    </div>
-
-        </div>
-      </section>
-      
-      <section class="section" id="parcerias">
-                <h2 class="section-title">5. PARCERIAS E ARTICULAÇÃO INSTITUCIONAL</h2>
-                <div class="intro-text">
-                    A capacidade do Instituto Tribus de gerar impacto social significativo é amplificada por sua robusta rede de parcerias e habilidade em articular-se com diversas instituições. 
-                </div>
-                
-                <div class="card">
-                    <h3>5.1. Parceiros Governamentais</h3>
-                    <ul class="partners-list">
-                        <li>Serviço Social do Comércio (SESC) </li>
-                        <li>Polícia Militar do Distrito Federal (PMDF) </li>
-                        <li>Polícia Civil do Distrito Federal (PCDF) </li>
-                        <li>Governo do Distrito Federal (GDF) </li>
-                        <li>Unidades Básicas de Saúde (UBS) de Ceilândia (parceria para prevenção de DSTs) </li>
-                        <li>Todos Contra Covid (apoio durante a pandemia) </li>
-                        <li>Polícia Rodoviária Federal (Potencial Parceira do Projeto Acelera DF) </li>
-                        <li>Departamento de Trânsito (Potencial Parceira do Projeto Acelera DF) </li>
-                    </ul>
-                    <div class="photo-indicator">
-                        📸 INSERIR AQUI: Fotos com representantes dos parceiros governamentais em eventos ou ações conjuntas
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>5.2. Instituições Beneficiadas e Parceiras</h3>
-                    <ul class="partners-list">
-                        <li>APAED (Associação de Pais e Amigos dos Excepcionais) </li>
-                        <li>Lar dos Idosos Luiza de Marillac </li>
-                        <li>Instituto Carinho </li>
-                        <li>Instituto Seja Amor </li>
-                        <li>Associação dos Idosos de Ceilândia </li>
-                        <li>Abrigo dos Excepcionais de Ceilândia </li>
-                        <li>Creche Leon Dennis e Creche Vovó Luzimar </li>
-                        <li>Projeto Social Um Dia Sem Fome na Santa Luzia, Cidade Estrutural </li>
-                        <li>CEOC </li>
-                    </ul>
-                    <div class="photo-indicator">
-                        📸 INSERIR AQUI: Fotos das instituições beneficiadas, com voluntários do Instituto Tribus interagindo
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="transparencia">
-                <h2 class="section-title">6. TRANSPARÊNCIA E GOVERNANÇA</h2>
-                <div class="intro-text">
-                    O Instituto Tribus pauta sua atuação pela máxima transparência e rigor na governança, elementos essenciais para a construção de confiança junto aos parceiros, beneficiários e sociedade em geral. 
-                </div>
-                <div class="card">
-                    <h3>Documentos Disponíveis para Consulta:</h3>
-                    <ul style="margin: 15px 0; padding-left: 30px;">
-                        <li>Estatuto Social (incluindo o da "Associação Domingueira Moto Rock") </li>
-                        <li>Relatórios de Atividades </li>
-                        <li>Prestação de Contas </li>
-                        <li>Plano de Trabalho Anual </li>
-                        <li>Certificados e Licenças </li>
-                    </ul>
-                    <div class="photo-indicator">
-                        📸 INSERIR AQUI: Pequenas imagens de ícones representando os documentos ou uma breve imagem de um relatório aberto
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="contato">
-                <h2 class="section-title">7. INFORMAÇÕES DE CONTATO</h2>
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <h4>Informações Institucionais</h4>
-                        <div class="contact-item">
-                            <span class="icon">📧</span> <a href="mailto:contato@institutotribus.org.br">contato@institutotribus.org.br</a> <br>
-                            (ou presidentedomingueira@gmail.com)
-                        </div>
-                        <div class="contact-item">
-                            <span class="icon">🌐</span> <a href="https://institutotribus.netlify.app/" target="_blank">https://institutotribus.netlify.app/</a> <br>
-                            <a href="http://www.institutotribus.com.br" target="_blank">www.institutotribus.com.br</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="icon">📍</span> Brasília, DF <br>
-                            Rua QNP 13 CONJ H CASA 15 - CEILÂNDIA NORTE, CEP: 72241-308 
-                        </div>
-                    </div>
-
-                    <div class="contact-card">
-                        <h4>Telefones para Contato</h4>
-                        <div class="contact-item">
-                            <span class="icon">📞</span> <strong>Alex Hunter (Presidente):</strong> <a href="tel:+5561991411921">(61) 99141-1921</a> 
-                        </div>
-                        <div class="contact-item">
-                            <span class="icon">📞</span> <strong>Marcia Leite (Coordenadora de Projetos):</strong> <a href="tel:+5561994401720">(61) 99440-1720</a> 
-                        </div>
-                        <div class="contact-item">
-                            <span class="icon">📞</span> <strong>Marcelo Santos (Secretário):</strong> <a href="tel:+5561985612068">(61) 98561-2068</a> 
-                        </div>
-                    </div>
-
-                    <div class="contact-card">
-                        <h4>Redes Sociais</h4>
-                        <div class="social-media-icons">
-                            <a href="https://www.instagram.com/institutotribus/" target="_blank">Instagram: @institutotribus</a><br> 
-                            <a href="https://www.instagram.com/domingueira_moto_rock/" target="_blank">Instagram: @domingueira_moto_rock</a><br> 
-                            <a href="https://www.facebook.com/institutotribus/" target="_blank">Facebook: Instituto Tribus</a><br> 
-                            <a href="https://www.facebook.com/DomingueiraMotorock/" target="_blank">Facebook: Domingueira Motorock</a><br> 
-                            <a href="https://www.linkedin.com/company/instituto-tribus/" target="_blank">LinkedIn: Instituto Tribus</a><br> 
-                            <a href="https://www.tiktok.com/@domingueirra_moto_rock" target="_blank">TikTok: @domingueirra_moto_rock</a><br> 
-                            <a href="https://www.youtube.com/@domingueiramotorock3358" target="_blank">YouTube: @domingueiramotorock3358</a> 
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="apoio">
-                <h2 class="section-title">8. APOIO E VISÃO DE FUTURO</h2>
-                <div class="card">
-                    <h3>Seja Nosso Parceiro</h3>
-                    <p>"A doação transforma um ato de amor em um ato concreto, seja um agente transformador, seja uma empresa parceira".  Empresas podem ser padrinhos ou madrinhas de projetos, com apoio financeiro dedutível de imposto de renda, ou compartilhando habilidades. </p>
-          _
-                    <div class="financial-info">
-                        <h4>Dados Bancários para Doação:</h4> 
-                        <p><strong>Banco:</strong> 461 - Banco Asaas</p> 
-                        <p><strong>Agência:</strong> 0001</p> 
-                        <p><strong>Conta:</strong> 3270348-0</p> 
-                        <p><strong>CNPJ:</strong> 50.903.480/0001-79</p> 
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <h3>Visão de Futuro</h3>
-                    <p>"Nossa visão de futuro é alcançar e expandir para que possamos construir um lugar melhor para se viver".  As metas incluem fechar um calendário anual de ações, criar um plano de negócios social para finanças responsáveis e sustentáveis, trabalhar o marketing para ampliação e engajamento, e desenvolver projetos inclusivos e sustentáveis. </p>
-                    <p class="footer-quote">"Grandes batalhas são dadas a grandes guerreiros. E nós não lutamos sozinhos. Somos uma tribo, somos o Instituto Tribus!" </p>
-                    <p class="intro-text">Transformando realidades através da inovação social e excelência técnica. </p>
-                </div>
-            </section>
-
+        <footer class="footer">
+            <p>&copy; 2025 Instituto Tribus. Todos os direitos reservados.</p>
+        </footer>
     </div>
-
-    <footer class="footer">
-      <p>© 2025 Instituto Tribus. Todos os direitos reservados.</p>
-    </footer>
-  </div>
-
-    <script>
-        const hamburger = document.getElementById('hamburger-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        // Função para abrir/fechar o menu
-        function toggleMenu() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        }
-
-        // Evento: Clicar no ícone do hambúrguer
-        hamburger.addEventListener('click', toggleMenu);
-
-        // Função para fechar o menu
-        function closeMenu() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-
-        // Evento: Clicar em qualquer link do menu fecha o menu
-        navLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        // Evento: Clicar fora do menu também o fecha
-        document.addEventListener('click', function (event) {
-            const isClickInsideMenu = navMenu.contains(event.target);
-            const isClickOnHamburger = hamburger.contains(event.target);
-
-            if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
-                closeMenu();
-            }
-        });
-    </script>
-    </body>
+</body>
 </html>
-```
