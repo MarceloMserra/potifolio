@@ -355,20 +355,59 @@
             color: #f39c12;
         }
         
-        /* Values Grid */
+        /* ===== NOVOS ESTILOS PARA A SEÇÃO DE VALORES ===== */
         .values-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
             margin: 30px 0;
         }
-
+        
         .value-item {
-            background: #ecf0f1;
-            padding: 20px;
-            border-radius: 10px;
+            background-color: #f8f9fa; /* Um cinza bem claro */
+            border: 1px solid #e9ecef; /* Borda sutil */
+            border-radius: 15px;
+            padding: 25px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            border-top: 4px solid #3498db;
+            transition: all 0.3s ease;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: #cce5ff;
+        }
+        
+        .value-icon-container {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%; /* Para fazer o círculo */
+            background-color: #e8f4fd; /* Fundo azul claro para o círculo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .value-icon-container svg {
+            fill: #3498db; /* A COR AZUL DO ÍCONE */
+            width: 36px;
+            height: 36px;
+        }
+        
+        .value-item h5 {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .value-item p {
+            font-size: 0.9rem;
+            color: #6c757d; /* Um cinza mais suave para a descrição */
+            line-height: 1.5;
         }
 
         .value-item h5 {
@@ -645,23 +684,51 @@
                     <h4>Visão</h4>
                     <p>"Ser <strong>referência nacional em projetos sociais e culturais</strong>, reconhecida pela <strong>transparência, resultados e compromisso com a transformação social</strong>". Busca ser agente transformador da sociedade, proporcionando acesso a projetos e serviços de caráter social, cultural, educacional e profissional, contribuindo para uma sociedade mais justa, igualitária e sustentável. </p>
 
-                    <h4>Valores Institucionais</h4>
-                    <div class="values-grid">
-                        <div class="value-item"><h5>Ética</h5><p>Compromisso com a integridade</p></div>
-                        <div class="value-item"><h5>Respeito às Diferenças</h5><p>Valorização da diversidade</p></div>
-                        <div class="value-item"><h5>Igualdade</h5><p>Oportunidades equitativas</p></div>
-                        <div class="value-item"><h5>Transparência</h5><p>Prestação de contas clara</p></div>
-                        <div class="value-item"><h5>Sustentabilidade</h5><p>Desenvolvimento responsável</p></div>
-                        <div class="value-item"><h5>Cidadania</h5><p>Fortalecimento da participação social</p></div>
-                        <div class="value-item"><h5>Valorização da Parceria</h5><p>Construção de redes colaborativas</p></div>
-                        <div class="value-item"><h5>Inclusão</h5><p>Acesso para todos</p></div>
-                        <div class="value-item"><h5>Compromisso</h5><p> </p></div>
-                        <div class="value-item"><h5>Liberdade</h5><p> </p></div>
-                        <div class="value-item"><h5>Educação</h5><p> </p></div>
-                        <div class="value-item"><h5>Solidariedade</h5><p> </p></div>
-                        <div class="value-item"><h5>Acessibilidade às Mudanças</h5><p> </p></div>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                        </div>
+                        <h5>Ética</h5>
+                        <p>Compromisso com a integridade</p>
                     </div>
-                </div>
+                    <div class="value-item">
+                        <div class="value-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M18 15c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-8 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm4-13C8.95 2 5 5.95 5 10.5c0 2.54 1.19 4.81 3 6.32V22h8v-5.18c1.81-1.51 3-3.78 3-6.32C19 5.95 15.05 2 12 2z"/></svg>
+                        </div>
+                        <h5>Respeito às Diferenças</h5>
+                        <p>Valorização da diversidade</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M19 13H5v-2h14v2zm0-6H5V5h14v2z"/></svg>
+                        </div>
+                        <h5>Igualdade</h5>
+                        <p>Oportunidades equitativas</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 10c-2.48 0-4.5-2.02-4.5-4.5S9.52 5.5 12 5.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5zm0-7c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5z"/></svg>
+                        </div>
+                        <h5>Transparência</h5>
+                        <p>Prestação de contas clara</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 14.5c-2.49 0-4.5-2.01-4.5-4.5S8.01 7.5 10.5 7.5c1.17 0 2.23.46 3 1.21V12h-1.5v-2.12c-.52-.4-1.18-.63-1.88-.63-1.66 0-3 1.34-3 3s1.34 3 3 3c.7 0 1.36-.23 1.88-.62V15c-.77.75-1.83 1.21-3 1.21z"/></svg>
+                        </div>
+                        <h5>Sustentabilidade</h5>
+                        <p>Desenvolvimento responsável</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        </div>
+                        <h5>Cidadania</h5>
+                        <p>Fortalecimento da participação</p>
+                    </div>
+                    </div>
+                   </div>
             </section>
 
             <section class="section" id="territorio">
