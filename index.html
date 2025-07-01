@@ -95,7 +95,7 @@
             padding: 10px 0;
             position: sticky;
             top: 0;
-            z-index: 1000; /* Z-index alto para ficar sobre todo o conteúdo */
+            z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             width: 100%;
         }
@@ -106,12 +106,11 @@
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
-            justify-content: center; /* No desktop, os links ficam centralizados */
+            justify-content: center;
             align-items: center;
             position: relative;
         }
 
-        /* Logo no menu - por padrão, escondida no desktop */
         .nav-logo {
             display: none;
         }
@@ -126,7 +125,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px; /* Espaçamento entre os links */
+            gap: 15px;
         }
 
         .nav-content a {
@@ -143,10 +142,12 @@
             transform: translateY(-2px);
         }
 
-        /* Ícone do Hambúrguer - escondido no desktop */
         .hamburger-menu {
             display: none;
             cursor: pointer;
+            border: none;
+            background: transparent;
+            padding: 0;
         }
 
         .hamburger-menu .bar {
@@ -157,7 +158,6 @@
             background-color: white;
             transition: all 0.3s ease-in-out;
         }
-        /* ===== FIM DOS ESTILOS DO MENU ===== */
         
         /* Content */
         .content {
@@ -340,7 +340,6 @@
 
         .contact-item {
             margin-bottom: 15px;
-            /* display: flex; alinhamento quebrado com múltiplos links*/
             gap: 10px;
         }
 
@@ -348,7 +347,7 @@
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
-            display: block; /* Garante que links de redes sociais fiquem um abaixo do outro */
+            display: block;
             margin-bottom: 5px;
         }
 
@@ -442,93 +441,95 @@
             font-weight: 500;
         }
 
-        /* --- SEÇÃO RESPONSIVA --- */
-/* ===== BLOCO NOVO - PARA COLAR NO LUGAR DO ANTIGO ===== */
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 2rem;
-    }
+        /* --- SEÇÃO RESPONSIVA REORGANIZADA --- */
+        @media (max-width: 768px) {
+            /* --- AJUSTES GERAIS PARA MOBILE --- */
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
 
-     .section-title {
-        font-size: 1rem;
-    }
-     .intro-text {
-    font-size: 0.9rem;  /* Texto de introdução da página */
-    line-height: 1.6;   /* Melhora a leitura em fontes menores */
-    }
-    
-    .card h3 {
-        font-size: 1rem;    /* Subtítulos dentro dos cards (ex: "2.1. Histórico...") */
-    }
-    
-    .card h4 {
-        font-size: 0.95rem;  /* Sub-subtítulos (ex: "Missão", "Visão") */
-    }
-    
-    .card p, .card ul, .partners-list li {
-        font-size: 0.9rem;   /* Textos de parágrafo e listas dentro dos cards */
-    } 
-    .content {
-        padding: 20px;
-    }
+            .projects-grid,
+            .stats-grid,
+            .contact-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .projects-grid,
-    .stats-grid,
-    .contact-grid,
-    .values-grid {
-        grid-template-columns: 1fr;
-    }
+            /* --- HIERARQUIA DE FONTES PARA MOBILE --- */
+            .section-title {
+                font-size: 1rem;
+            }
 
-    /* --- ESTILOS DO MENU PARA MOBILE --- */
-    .nav-container {
-        justify-content: space-between;
-    }
+            .intro-text {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
 
-    .nav-logo {
-        display: block;
-    }
+            .card h3 {
+                font-size: 1rem;
+            }
 
-    .hamburger-menu {
-        display: block;
-    }
+            .card h4 {
+                font-size: 0.95rem;
+            }
 
-    .hamburger-menu.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger-menu.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger-menu.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
+            .card p, .card ul, .partners-list li {
+                font-size: 0.9rem;
+            }
 
-    .nav-content {
-        position: fixed;
-        right: -100%;
-        top: 70px;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        width: 70%;
-        height: 100vh;
-        background: #2c3e50;
-        padding-top: 40px;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-        transition: right 0.4s ease-in-out;
-        gap: 10px;
-    }
+            /* --- ESTILOS DO MENU PARA MOBILE --- */
+            .nav-container {
+                justify-content: space-between;
+            }
 
-    .nav-content.active {
-        right: 0;
-    }
+            .nav-logo {
+                display: block;
+            }
 
-    /* ESTA É A REGRA CORRIGIDA */
-    .nav-content a {
-        font-size: 1rem;      /* Define o tamanho padrão (16px), ótimo para leitura. */
-        font-weight: 400;   /* Deixa a fonte com peso "normal", menos negrito. */
-        padding: 12px 0;
-    }
-}
+            .hamburger-menu {
+                display: block;
+            }
+
+            .hamburger-menu.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger-menu.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .hamburger-menu.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .nav-content {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                width: 70%;
+                height: 100vh;
+                background: #2c3e50;
+                padding-top: 40px;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+                transition: right 0.4s ease-in-out;
+                gap: 10px;
+            }
+
+            .nav-content.active {
+                right: 0;
+            }
+
+            .nav-content a {
+                font-size: 1rem;
+                font-weight: 400;
+                padding: 12px 0;
+            }
+        }
 
         /* Print Styles */
         @media print {
@@ -568,13 +569,14 @@
                 <a href="#apoio" class="nav-link">Apoio</a>
             </div>
 
-            <div class="hamburger-menu" id="hamburger-toggle">
+            <button class="hamburger-menu" id="hamburger-toggle" aria-label="Abrir menu">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
-            </div>
+            </button>
         </div>
     </nav>
+    
     <div class="container">
         <header class="header">
             <div class="header-content">
@@ -653,11 +655,11 @@
                         <div class="value-item"><h5>Cidadania</h5><p>Fortalecimento da participação social</p></div>
                         <div class="value-item"><h5>Valorização da Parceria</h5><p>Construção de redes colaborativas</p></div>
                         <div class="value-item"><h5>Inclusão</h5><p>Acesso para todos</p></div>
-                        <div class="value-item"><h5>Compromisso</h5><p>&nbsp;</p></div>
-                        <div class="value-item"><h5>Liberdade</h5><p>&nbsp;</p></div>
-                        <div class="value-item"><h5>Educação</h5><p>&nbsp;</p></div>
-                        <div class="value-item"><h5>Solidariedade</h5><p>&nbsp;</p></div>
-                        <div class="value-item"><h5>Acessibilidade às Mudanças</h5><p>&nbsp;</p></div>
+                        <div class="value-item"><h5>Compromisso</h5><p> </p></div>
+                        <div class="value-item"><h5>Liberdade</h5><p> </p></div>
+                        <div class="value-item"><h5>Educação</h5><p> </p></div>
+                        <div class="value-item"><h5>Solidariedade</h5><p> </p></div>
+                        <div class="value-item"><h5>Acessibilidade às Mudanças</h5><p> </p></div>
                     </div>
                 </div>
             </section>
@@ -960,7 +962,7 @@
                             <a href="https://www.instagram.com/institutotribus/" target="_blank">Instagram: @institutotribus</a>
                             <a href="https://www.instagram.com/domingueira_moto_rock/" target="_blank">Instagram: @domingueira_moto_rock</a>
                             <a href="https://www.facebook.com/institutotribus/" target="_blank">Facebook: Instituto Tribus</a>
-                            <a href="https://www.youtube.com/@domingueiramotorock3358" target="_blank">YouTube: Domingueira Moto Rock</a>
+                            <a href="#" target="_blank">YouTube: Domingueira Moto Rock</a>
                         </div>
                     </div>
                 </div>
@@ -1020,9 +1022,10 @@
         });
         
         // Evento: Clicar na logo (no menu móvel) também fecha o menu e rola para o topo
-        navLogo.addEventListener('click', function() {
+        navLogo.addEventListener('click', function(event) {
+            event.preventDefault(); // Impede o link # de pular na barra de endereço
             closeMenu();
-            window.scrollTo(0, 0);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // Evento: Clicar fora do menu também o fecha
@@ -1037,4 +1040,3 @@
     </script>
 </body>
 </html>
-```
