@@ -89,7 +89,7 @@
             opacity: 0.8;
         }
         
-        /* ===== ESTILOS DO MENU RESPONSIVO ===== */
+        /* Menu de Navegação */
         .nav {
             background: #34495e;
             padding: 10px 0;
@@ -159,7 +159,7 @@
             transition: all 0.3s ease-in-out;
         }
         
-        /* Content */
+        /* Conteúdo Geral */
         .content {
             padding: 40px;
         }
@@ -195,7 +195,6 @@
             text-align: justify;
         }
 
-        /* Cards */
         .card {
             background: white;
             border-radius: 15px;
@@ -228,30 +227,34 @@
             list-style: disc;
         }
 
-        /* ===== ESTILOS PARA O NOVO DASHBOARD DE RESULTADOS ===== */
+        /* ===== NOVOS ESTILOS PARA O DASHBOARD COM GRÁFICOS ===== */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
         }
-        
-        .stat-card {
+
+        .stat-card-clean, .stat-card-chart {
             background-color: #fff;
             border: 1px solid #e9ecef;
             border-radius: 15px;
             padding: 25px;
             text-align: center;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
         }
-        
-        .stat-card:hover {
+
+        .stat-card-clean:hover, .stat-card-chart:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
-        
+
         .stat-icon {
-            margin: 0 auto 15px auto;
+            margin-bottom: 15px;
             width: 60px;
             height: 60px;
             border-radius: 50%;
@@ -260,26 +263,37 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .stat-icon svg {
             fill: #3498db;
             width: 32px;
             height: 32px;
         }
-        
+
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: #2c3e50;
             margin-bottom: 5px;
         }
-        
+
         .stat-label {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #6c757d;
+            line-height: 1.4;
+        }
+        
+        .chart-container {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .chart-container canvas {
+            max-width: 100%;
         }
 
-        /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -336,7 +350,6 @@
             text-align: center;
         }
         
-        /* Contact Section */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -374,7 +387,6 @@
             color: #f39c12;
         }
         
-        /* ===== ESTILOS PARA A SEÇÃO DE VALORES ===== */
         .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -429,7 +441,6 @@
             line-height: 1.5;
         }
 
-        /* Partners List */
         .partners-list {
             margin: 20px 0;
             list-style: none;
@@ -447,7 +458,6 @@
             font-weight: 500;
         }
         
-        /* Financial Info */
         .financial-info {
             background: #f8f8f8;
             padding: 25px;
@@ -466,7 +476,6 @@
             margin-bottom: 8px;
         }
 
-        /* Footer */
         .footer {
             background: #2c3e50;
             color: white;
@@ -481,7 +490,6 @@
             color: #f39c12;
         }
 
-        /* Photo Indicators */
         .photo-indicator {
             background: #e8f4fd;
             border: 2px dashed #3498db;
@@ -493,9 +501,7 @@
             font-weight: 500;
         }
 
-        /* --- SEÇÃO RESPONSIVA REORGANIZADA --- */
         @media (max-width: 768px) {
-            /* --- AJUSTES GERAIS PARA MOBILE --- */
             .header h1 {
                 font-size: 2rem;
             }
@@ -511,9 +517,8 @@
                 grid-template-columns: 1fr;
             }
 
-            /* --- HIERARQUIA DE FONTES PARA MOBILE --- */
             .section-title {
-                font-size: 1.5rem; /* Ajuste para ter mais destaque que os cards */
+                font-size: 1.5rem;
             }
 
             .intro-text {
@@ -522,7 +527,7 @@
             }
 
             .card h3 {
-                font-size: 1.2rem; /* Pouco maior para subtítulos */
+                font-size: 1.2rem;
             }
 
             .card h4 {
@@ -533,8 +538,7 @@
                 font-size: 0.9rem;
             }
             
-            /* --- AJUSTE PARA O DASHBOARD NO MOBILE --- */
-            .stat-card {
+            .stat-card-clean, .stat-card-chart {
                 padding: 20px;
             }
             .stat-number {
@@ -544,7 +548,6 @@
                 font-size: 0.9rem; 
             }
 
-            /* --- ESTILOS DO MENU PARA MOBILE --- */
             .nav-container {
                 justify-content: space-between;
             }
@@ -594,20 +597,16 @@
             }
         }
 
-        /* Print Styles */
         @media print {
-            /* --- CONFIGURAÇÕES GERAIS DA PÁGINA PARA O PDF --- */
             body {
                 font-size: 10pt;
                 background: #fff;
             }
 
-            /* --- ESCONDE ELEMENTOS INTERATIVOS E DESNECESSÁRIOS --- */
             .nav, .footer, .photo-indicator, .hamburger-menu, .contact-grid, #apoio .card:first-child {
                 display: none;
             }
 
-            /* --- GARANTE QUE CADA SEÇÃO PRINCIPAL COMECE EM UMA NOVA PÁGINA --- */
             .section {
                 page-break-before: always;
             }
@@ -615,7 +614,6 @@
                 page-break-before: avoid;
             }
             
-            /* --- AJUSTES DE LAYOUT E ESTILO PARA IMPRESSÃO --- */
             .header {
                 background-image: none !important;
                 background-color: #fff !important;
@@ -624,7 +622,7 @@
                 padding: 20px 0;
             }
 
-            .card, .project-card, .stat-card, .contact-card, .value-item {
+            .card, .project-card, .stat-card-clean, .stat-card-chart, .value-item {
                 break-inside: avoid;
                 box-shadow: none;
                 border: 1px solid #ddd;
