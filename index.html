@@ -2,19 +2,22 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-1.0">
     <title>Instituto Tribus - Portfólio de Capacidade Técnica</title>
     <style>
+        /* Reset de margem e preenchimento para todos os elementos */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Comportamento de rolagem suave para âncoras */
         html {
             scroll-behavior: smooth;
         }
 
+        /* Estilos do corpo da página */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -22,6 +25,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
+        /* Contêiner principal para centralizar o conteúdo */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -29,7 +33,7 @@
             box-shadow: 0 0 30px rgba(0,0,0,0.1);
         }
 
-        /* Header */
+        /* Estilos do cabeçalho */
         .header {
             background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
@@ -39,6 +43,7 @@
             overflow: hidden;
         }
 
+        /* Efeito de grão no cabeçalho */
         .header::before {
             content: '';
             position: absolute;
@@ -50,11 +55,13 @@
             opacity: 0.1;
         }
 
+        /* Conteúdo do cabeçalho */
         .header-content {
             position: relative;
             z-index: 1;
         }
 
+        /* Placeholder para o logo no cabeçalho */
         .logo-placeholder {
             width: 120px;
             height: 120px;
@@ -64,6 +71,7 @@
             justify-content: center;
         }
 
+        /* Título principal do cabeçalho */
         .header h1 {
             font-size: 3rem;
             font-weight: 700;
@@ -71,12 +79,14 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        /* Subtítulo do cabeçalho */
         .header .subtitle {
             font-size: 1.4rem;
             opacity: 0.9;
             margin-bottom: 10px;
         }
 
+        /* Nome da organização no cabeçalho */
         .header .org-name {
             font-size: 2rem;
             font-weight: 600;
@@ -84,6 +94,7 @@
             margin-bottom: 20px;
         }
 
+        /* Detalhes da organização no cabeçalho */
         .header .details {
             font-size: 1.1rem;
             opacity: 0.8;
@@ -100,6 +111,7 @@
             width: 100%;
         }
         
+        /* Contêiner do menu de navegação */
         .nav-container {
             max-width: 1200px;
             width: 100%;
@@ -111,16 +123,19 @@
             position: relative;
         }
 
+        /* Logo do menu de navegação (oculto por padrão em desktop) */
         .nav-logo {
             display: none;
         }
 
+        /* Imagem do logo no menu de navegação */
         .nav-logo img {
             max-height: 50px;
             width: auto;
             display: block;
         }
         
+        /* Conteúdo do menu de navegação */
         .nav-content {
             display: flex;
             justify-content: center;
@@ -128,6 +143,7 @@
             gap: 15px;
         }
 
+        /* Links do menu de navegação */
         .nav-content a {
             color: white;
             text-decoration: none;
@@ -137,11 +153,13 @@
             font-weight: 500;
         }
 
+        /* Efeito hover nos links do menu */
         .nav-content a:hover {
             background: #3498db;
             transform: translateY(-2px);
         }
 
+        /* Menu hambúrguer (oculto por padrão em desktop) */
         .hamburger-menu {
             display: none;
             cursor: pointer;
@@ -150,6 +168,7 @@
             padding: 0;
         }
 
+        /* Barras do menu hambúrguer */
         .hamburger-menu .bar {
             display: block;
             width: 25px;
@@ -159,15 +178,17 @@
             transition: all 0.3s ease-in-out;
         }
         
-        /* Conteúdo Geral */
+        /* Conteúdo Geral das seções */
         .content {
             padding: 40px;
         }
 
+        /* Estilo para cada seção */
         .section {
             margin-bottom: 60px;
         }
 
+        /* Título da seção */
         .section-title {
             font-size: 2.5rem;
             color: #2c3e50;
@@ -176,6 +197,7 @@
             padding-bottom: 15px;
         }
 
+        /* Linha decorativa abaixo do título da seção */
         .section-title::after {
             content: '';
             position: absolute;
@@ -187,6 +209,7 @@
             border-radius: 2px;
         }
 
+        /* Texto introdutório das seções */
         .intro-text {
             font-size: 1.2rem;
             line-height: 1.8;
@@ -195,6 +218,7 @@
             text-align: justify;
         }
 
+        /* Estilo para cartões de conteúdo */
         .card {
             background: white;
             border-radius: 15px;
@@ -205,29 +229,33 @@
             transition: transform 0.3s ease;
         }
 
+        /* Efeito hover nos cartões */
         .card:hover {
             transform: translateY(-5px);
         }
 
+        /* Títulos H3 dentro dos cartões */
         .card h3 {
             color: #2c3e50;
             font-size: 1.5rem;
             margin-bottom: 15px;
         }
 
+        /* Títulos H4 dentro dos cartões */
         .card h4 {
             color: #3498db;
             font-size: 1.2rem;
             margin: 20px 0 10px 0;
         }
 
+        /* Listas não ordenadas dentro dos cartões */
         .card ul {
             margin: 15px 0;
             padding-left: 20px;
             list-style: disc;
         }
 
-        /* ===== NOVOS ESTILOS PARA O DASHBOARD COM GRÁFICOS ===== */
+        /* Estilos para o grid de estatísticas (dashboard) */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -235,6 +263,7 @@
             margin-top: 20px;
         }
 
+        /* Cartões de estatísticas */
         .stat-card-clean, .stat-card-chart {
             background-color: #fff;
             border: 1px solid #e9ecef;
@@ -248,11 +277,13 @@
             justify-content: space-between;
         }
 
+        /* Efeito hover nos cartões de estatísticas */
         .stat-card-clean:hover, .stat-card-chart:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
+        /* Ícone do cartão de estatística */
         .stat-icon {
             margin-bottom: 15px;
             width: 60px;
@@ -264,12 +295,14 @@
             justify-content: center;
         }
 
+        /* SVG dentro do ícone de estatística */
         .stat-icon svg {
             fill: #3498db;
             width: 32px;
             height: 32px;
         }
 
+        /* Número da estatística */
         .stat-number {
             font-size: 2.2rem;
             font-weight: 700;
@@ -277,12 +310,14 @@
             margin-bottom: 5px;
         }
 
+        /* Rótulo da estatística */
         .stat-label {
             font-size: 0.95rem;
             color: #6c757d;
             line-height: 1.4;
         }
         
+        /* Contêiner do gráfico (se houver) */
         .chart-container {
             width: 120px;
             height: 120px;
@@ -290,10 +325,12 @@
             position: relative;
         }
         
+        /* Canvas dentro do contêiner do gráfico */
         .chart-container canvas {
             max-width: 100%;
         }
 
+        /* Grid de projetos */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -301,6 +338,7 @@
             margin: 40px 0;
         }
 
+        /* Cartão de projeto */
         .project-card {
             background: white;
             border-radius: 15px;
@@ -311,14 +349,17 @@
             flex-direction: column;
         }
         
+        /* Conteúdo do projeto dentro do cartão */
         .project-card .project-content {
             flex-grow: 1;
         }
 
+        /* Efeito hover no cartão de projeto */
         .project-card:hover {
             transform: translateY(-10px);
         }
 
+        /* Cabeçalho do cartão de projeto */
         .project-header {
             background: linear-gradient(135deg, #f39c12, #e67e22);
             color: white;
@@ -326,15 +367,18 @@
             text-align: center;
         }
 
+        /* Título H3 no cabeçalho do projeto */
         .project-header h3 {
             font-size: 1.4rem;
             margin-bottom: 10px;
         }
 
+        /* Conteúdo principal do projeto */
         .project-content {
             padding: 25px;
         }
 
+        /* Placeholder para foto de projeto */
         .project-photo-placeholder {
             width: 100%;
             height: 200px;
@@ -350,6 +394,7 @@
             text-align: center;
         }
         
+        /* Grid de contatos */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -357,6 +402,7 @@
             margin: 40px 0;
         }
 
+        /* Cartão de contato */
         .contact-card {
             background: linear-gradient(135deg, #8e44ad, #9b59b6);
             color: white;
@@ -364,17 +410,20 @@
             border-radius: 15px;
         }
 
+        /* Título H4 no cartão de contato */
         .contact-card h4 {
             color: white;
             margin-bottom: 20px;
             font-size: 1.3rem;
         }
 
+        /* Item de contato */
         .contact-item {
             margin-bottom: 15px;
             gap: 10px;
         }
 
+        /* Links dentro dos itens de contato */
         .contact-item a {
             color: white;
             text-decoration: none;
@@ -383,10 +432,12 @@
             margin-bottom: 5px;
         }
 
+        /* Efeito hover nos links de contato */
         .contact-item a:hover {
             color: #f39c12;
         }
         
+        /* Grid de valores */
         .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -394,6 +445,7 @@
             margin: 30px 0;
         }
         
+        /* Item de valor */
         .value-item {
             background-color: #f8f9fa;
             border: 1px solid #e9ecef;
@@ -406,12 +458,14 @@
             transition: all 0.3s ease;
         }
         
+        /* Efeito hover no item de valor */
         .value-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.08);
             border-color: #cce5ff;
         }
         
+        /* Contêiner do ícone de valor */
         .value-icon-container {
             width: 70px;
             height: 70px;
@@ -423,24 +477,28 @@
             margin-bottom: 20px;
         }
         
+        /* SVG dentro do ícone de valor */
         .value-icon-container svg {
             fill: #3498db;
             width: 36px;
             height: 36px;
         }
         
+        /* Título H5 do item de valor */
         .value-item h5 {
             color: #2c3e50;
             font-size: 1.1rem;
             margin-bottom: 8px;
         }
         
+        /* Parágrafo do item de valor */
         .value-item p {
             font-size: 0.9rem;
             color: #6c757d;
             line-height: 1.5;
         }
 
+        /* Lista de parceiros */
         .partners-list {
             margin: 20px 0;
             list-style: none;
@@ -450,14 +508,35 @@
             gap: 15px;
         }
 
-        .partners-list li {
+        /* Estilos para os "badges" de parceiros */
+        .partner-badge {
             background: #e8f4fd;
             padding: 10px 15px;
-            border-radius: 8px;
+            border-radius: 20px; /* Cantos mais arredondados para efeito de badge */
             color: #2c3e50;
             font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Espaço entre ícone e texto */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* Efeito hover nos badges de parceiros */
+        .partner-badge:hover {
+            background-color: #d0e8fa;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        /* SVG dentro do badge de parceiro */
+        .partner-badge svg {
+            fill: #3498db;
+            width: 20px;
+            height: 20px;
         }
         
+        /* Informações financeiras */
         .financial-info {
             background: #f8f8f8;
             padding: 25px;
@@ -466,16 +545,19 @@
             border: 1px dashed #ccc;
         }
 
+        /* Título H4 das informações financeiras */
         .financial-info h4 {
             color: #2c3e50;
             margin-bottom: 15px;
             font-size: 1.3rem;
         }
 
+        /* Parágrafos das informações financeiras */
         .financial-info p {
             margin-bottom: 8px;
         }
 
+        /* Rodapé */
         .footer {
             background: #2c3e50;
             color: white;
@@ -483,6 +565,7 @@
             padding: 40px;
         }
 
+        /* Citação no rodapé */
         .footer-quote {
             font-size: 1.3rem;
             font-style: italic;
@@ -490,6 +573,7 @@
             color: #f39c12;
         }
 
+        /* Indicador de foto (placeholder) */
         .photo-indicator {
             background: #e8f4fd;
             border: 2px dashed #3498db;
@@ -501,15 +585,81 @@
             font-weight: 500;
         }
 
+        /* Novos estilos para separadores de categoria */
+        .category-separator {
+            margin: 60px 0 40px 0;
+            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Título da categoria */
+        .category-title {
+            display: inline-block;
+            background: linear-gradient(90deg, #3498db, #f39c12);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Linha sutil antes e depois do título para melhor separação */
+        .category-separator::before,
+        .category-separator::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: calc(50% - 200px); /* Ajusta com base na largura do título */
+            height: 2px;
+            background: #e0e0e0;
+            z-index: 0;
+        }
+
+        /* Linha à esquerda do título da categoria */
+        .category-separator::before {
+            left: 0;
+        }
+
+        /* Linha à direita do título da categoria */
+        .category-separator::after {
+            right: 0;
+        }
+
+        /* Estilo do ícone do cartão de projeto */
+        .project-icon {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* SVG dentro do ícone do projeto */
+        .project-icon svg {
+            width: 48px;
+            height: 48px;
+            fill: white; /* Ícones devem ser brancos contra o fundo gradiente */
+        }
+
+
+        /* Media queries para responsividade */
         @media (max-width: 768px) {
+            /* Tamanho da fonte do título do cabeçalho em telas menores */
             .header h1 {
                 font-size: 2rem;
             }
             
+            /* Preenchimento do conteúdo em telas menores */
             .content {
                 padding: 20px;
             }
 
+            /* Colunas únicas para grids em telas menores */
             .projects-grid,
             .stats-grid,
             .contact-grid,
@@ -517,15 +667,18 @@
                 grid-template-columns: 1fr;
             }
 
+            /* Tamanho da fonte do título da seção em telas menores */
             .section-title {
                 font-size: 1.5rem;
             }
 
+            /* Tamanho da fonte e altura da linha do texto introdutório em telas menores */
             .intro-text {
                 font-size: 0.9rem;
                 line-height: 1.6;
             }
 
+            /* Tamanho da fonte dos títulos H3 e H4 nos cartões em telas menores */
             .card h3 {
                 font-size: 1.2rem;
             }
@@ -534,32 +687,52 @@
                 font-size: 1rem;
             }
 
-            .card p, .card ul, .partners-list li {
+            /* Tamanho da fonte de parágrafos e listas em cartões em telas menores */
+            .card p, .card ul {
                 font-size: 0.9rem;
             }
+
+            /* Empilha os badges de parceiros verticalmente em telas pequenas */
+            .partners-list {
+                flex-direction: column; 
+                align-items: flex-start;
+            }
+
+            /* Faz com que os badges ocupem a largura total em telas pequenas */
+            .partner-badge {
+                width: 100%; 
+                justify-content: flex-start;
+            }
             
+            /* Preenchimento dos cartões de estatísticas em telas menores */
             .stat-card-clean, .stat-card-chart {
                 padding: 20px;
             }
+            /* Tamanho da fonte do número da estatística em telas menores */
             .stat-number {
                 font-size: 2rem; 
             }
+            /* Tamanho da fonte do rótulo da estatística em telas menores */
             .stat-label {
                 font-size: 0.9rem; 
             }
 
+            /* Ajusta o alinhamento do contêiner de navegação em telas menores */
             .nav-container {
                 justify-content: space-between;
             }
 
+            /* Mostra o logo do menu em telas menores */
             .nav-logo {
                 display: block;
             }
 
+            /* Mostra o menu hambúrguer em telas menores */
             .hamburger-menu {
                 display: block;
             }
 
+            /* Animação do menu hambúrguer quando ativo */
             .hamburger-menu.active .bar:nth-child(2) {
                 opacity: 0;
             }
@@ -570,6 +743,7 @@
                 transform: translateY(-8px) rotate(-45deg);
             }
 
+            /* Menu de navegação lateral em telas menores */
             .nav-content {
                 position: fixed;
                 right: -100%;
@@ -586,34 +760,53 @@
                 gap: 10px;
             }
 
+            /* Ativa o menu de navegação lateral */
             .nav-content.active {
                 right: 0;
             }
 
+            /* Links do menu de navegação em telas menores */
             .nav-content a {
                 font-size: 1rem;
                 font-weight: 400;
                 padding: 12px 0;
             }
+
+            /* Título da categoria em telas menores */
+            .category-title {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+            /* Ajusta a largura das linhas do separador de categoria em telas menores */
+            .category-separator::before,
+            .category-separator::after {
+                width: calc(50% - 150px); /* Ajusta para telas menores */
+            }
         }
 
+        /* Estilos para impressão */
         @media print {
+            /* Tamanho da fonte e fundo do corpo para impressão */
             body {
                 font-size: 10pt;
                 background: #fff;
             }
 
+            /* Oculta elementos não essenciais para impressão */
             .nav, .footer, .photo-indicator, .hamburger-menu, .contact-grid, #apoio .card:first-child {
                 display: none;
             }
 
+            /* Força quebra de página antes de cada seção */
             .section {
                 page-break-before: always;
             }
+            /* Evita quebra de página antes do prefácio */
             #prefacio {
                 page-break-before: avoid;
             }
             
+            /* Remove estilos de fundo e sombra do cabeçalho para impressão */
             .header {
                 background-image: none !important;
                 background-color: #fff !important;
@@ -622,6 +815,7 @@
                 padding: 20px 0;
             }
 
+            /* Remove sombras e adiciona borda para cartões na impressão */
             .card, .project-card, .stat-card-clean, .stat-card-chart, .value-item {
                 break-inside: avoid;
                 box-shadow: none;
@@ -629,6 +823,7 @@
                 padding: 15px;
             }
             
+            /* Remove sublinhado de links e mantém cor para impressão */
             a {
                 text-decoration: none;
                 color: inherit;
@@ -774,13 +969,55 @@
                             <h5>Cidadania</h5>
                             <p>Fortalecimento da participação</p>
                         </div>
-                         <div class="value-item"><h5>Valorização da Parceria</h5><p>Construção de redes colaborativas</p></div>
-                        <div class="value-item"><h5>Inclusão</h5><p>Acesso para todos</p></div>
-                        <div class="value-item"><h5>Compromisso</h5><p> </p></div>
-                        <div class="value-item"><h5>Liberdade</h5><p> </p></div>
-                        <div class="value-item"><h5>Educação</h5><p> </p></div>
-                        <div class="value-item"><h5>Solidariedade</h5><p> </p></div>
-                        <div class="value-item"><h5>Acessibilidade às Mudanças</h5><p> </p></div>
+                        <div class="value-item">
+                            <div class="value-icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M22 10h-4V7c0-1.66-1.34-3-3-3s-3 1.34-3 3v3H8c-1.66 0-3 1.34-3 3v7c0 1.66 1.34 3 3 3h14c1.66 0 3-1.34 3-3v-7c0-1.66-1.34-3-3-3zm-10 0V7c0-.55.45-1 1-1s1 .45 1 1v3h-2z"/></svg>
+                            </div>
+                            <h5>Valorização da Parceria</h5>
+                            <p>Construção de redes colaborativas</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                            </div>
+                            <h5>Inclusão</h5>
+                            <p>Acesso para todos</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            </div>
+                            <h5>Compromisso</h5>
+                            <p>Dedicação e responsabilidade</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            </div>
+                            <h5>Liberdade</h5>
+                            <p>Autonomia e expressão</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            </div>
+                            <h5>Educação</h5>
+                            <p>Conhecimento e desenvolvimento</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            </div>
+                            <h5>Solidariedade</h5>
+                            <p>Apoio e cooperação</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            </div>
+                            <h5>Acessibilidade às Mudanças</h5>
+                            <p>Adaptação e inovação</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -855,7 +1092,7 @@
                 </div>
 
                 <div class="photo-indicator" style="padding: 20px; text-align: center;">
-                    <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/Resultados.png" alt="Gráfico com os resultados quantitativos do Instituto Tribus" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                    <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/Resultados.png" alt="Gráfico com os resultados quantitativos do Instituto Tribus" style="width: 100%; height: auto; display: block; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); object-fit: contain;">
                 </div>
             </section>
 
@@ -864,12 +1101,15 @@
     <h2 class="section-title">4. PROJETOS E PROGRAMAS DE DESTAQUE</h2>
     
     <div class="category-separator">
-        <div class="category-title">PROJETOS CONSOLIDADOS</div>
+        <h3 class="category-title">PROJETOS CONSOLIDADOS</h3>
     </div>
     
     <div class="projects-grid">
         <div class="project-card highlight-project">
             <div class="project-header">
+                <div class="project-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                </div>
                 <h3>Domingueira Moto Rock</h3>
                 <p>Evento mensal - Pedra angular do Instituto</p>
             </div>
@@ -894,6 +1134,9 @@
 
         <div class="project-card">
             <div class="project-header">
+                <div class="project-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6zm-2 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+                </div>
                 <h3>Festival Tribus</h3>
                 <p>Festival cultural itinerante</p>
             </div>
@@ -918,6 +1161,9 @@
 
         <div class="project-card">
             <div class="project-header">
+                <div class="project-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+                </div>
                 <h3>Projeto Acelera DF</h3>
                 <p>Educação viária e cultura automotiva</p>
             </div>
@@ -942,6 +1188,9 @@
 
         <div class="project-card">
             <div class="project-header">
+                <div class="project-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+                </div>
                 <h3>CineMaker</h3>
                 <p>Centro audiovisual completo</p>
             </div>
@@ -966,12 +1215,15 @@
     </div>
 
     <div class="category-separator">
-        <div class="category-title">PROGRAMAS DE CAPACITAÇÃO PROFISSIONAL</div>
+        <h3 class="category-title">PROGRAMAS DE CAPACITAÇÃO PROFISSIONAL</h3>
     </div>
 
     <div class="projects-grid">
         <div class="project-card">
             <div class="project-header">
+                <div class="project-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                </div>
                 <h3>Curso de Pilotagem de Drones</h3>
                 <p>Capacitação tecnológica avançada</p>
             </div>
@@ -996,6 +1248,9 @@
 
         <div class="project-card">
             <div class="project-header">
+                <div class="project-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                </div>
                 <h3>Culinária e Gastronomia Social</h3>
                 <p>Geração de renda para mulheres</p>
             </div>
@@ -1020,6 +1275,9 @@
 
         <div class="project-card">
             <div class="project-header">
+                <div class="project-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                </div>
                 <h3>Curso de Bartender Black Hunter</h3>
                 <p>Profissionalização e inserção no mercado</p>
             </div>
@@ -1044,6 +1302,9 @@
 
         <div class="project-card">
             <div class="project-header">
+                <div class="project-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                </div>
                 <h3>Manutenção para Mulheres</h3>
                 <p>Autonomia e economia doméstica</p>
             </div>
@@ -1067,6 +1328,9 @@
 
         <div class="project-card">
             <div class="project-header">
+                <div class="project-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                </div>
                 <h3>Produção de Podcast</h3>
                 <p>Capacitação em conteúdo digital</p>
             </div>
@@ -1090,12 +1354,15 @@
     </div>
 
     <div class="category-separator">
-        <div class="category-title">PROGRAMAS EDUCACIONAIS E CULTURAIS</div>
+        <h3 class="category-title">PROGRAMAS EDUCACIONAIS E CULTURAIS</h3>
     </div>
 
     <div class="projects-grid">
         <div class="project-card">
             <div class="project-header">
+                <div class="project-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                </div>
                 <h3>Musicalização Infantil</h3>
                 <p>Arte como ferramenta de transformação</p>
             </div>
@@ -1120,6 +1387,9 @@
 
         <div class="project-card">
             <div class="project-header">
+                <div class="project-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                </div>
                 <h3>Projeto Conecte-se e Cresça</h3>
                 <p>Marketing digital e empreendedorismo</p>
             </div>
@@ -1142,12 +1412,15 @@
     </div>
 
     <div class="category-separator">
-        <div class="category-title">PROJETOS EM DESENVOLVIMENTO</div>
+        <h3 class="category-title">PROJETOS EM DESENVOLVIMENTO</h3>
     </div>
 
     <div class="projects-grid">
         <div class="project-card">
             <div class="project-header">
+                <div class="project-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                </div>
                 <h3>Estúdio Comunitário Vozes da Quebrada</h3>
                 <p>Estúdio de gravação musical acessível</p>
             </div>
@@ -1172,6 +1445,9 @@
 
         <div class="project-card">
             <div class="project-header">
+                <div class="project-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                </div>
                 <h3>Projeto Distrito Animal</h3>
                 <p>Abrigo para animais abandonados</p>
             </div>
@@ -1204,14 +1480,38 @@
                 <div class="card">
                     <h3>5.1. Parceiros Governamentais</h3>
                     <ul class="partners-list">
-                        <li>Serviço Social do Comércio (SESC)</li>
-                        <li>Polícia Militar do Distrito Federal (PMDF)</li>
-                        <li>Polícia Civil do Distrito Federal (PCDF)</li>
-                        <li>Governo do Distrito Federal (GDF)</li>
-                        <li>UBS de Ceilândia</li>
-                        <li>Todos Contra Covid</li>
-                        <li>Polícia Rodoviária Federal (Potencial)</li>
-                        <li>Departamento de Trânsito (Potencial)</li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Serviço Social do Comércio (SESC)
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Polícia Militar do Distrito Federal (PMDF)
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Polícia Civil do Distrito Federal (PCDF)
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Governo do Distrito Federal (GDF)
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            UBS de Ceilândia
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Todos Contra Covid
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Polícia Rodoviária Federal (Potencial)
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Departamento de Trânsito (Potencial)
+                        </li>
                     </ul>
                     <div style="text-align: center; margin: 30px 0;">
                         <img src="https://raw.githubusercontent.com/MarceloMserra/potifolio/refs/heads/main/portifolioIT.pdf.png" alt="Parceiros Governamentais" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
@@ -1221,17 +1521,44 @@
                 <div class="card">
                     <h3>5.2. Instituições Beneficiadas e Parceiras</h3>
                     <ul class="partners-list">
-                        <li>APAED</li>
-                        <li>Lar dos Idosos Luiza de Marillac</li>
-                        <li>Instituto Carinho</li>
-                        <li>Instituto Seja Amor</li>
-                        <li>Associação dos Idosos de Ceilândia</li>
-                        <li>Abrigo dos Excepcionais de Ceilândia</li>
-                        <li>Creche Leon Dennis e Creche Vovó Luzimar</li>
-                        <li>Projeto Social Um Dia Sem Fome</li>
-                        <li>CEOC</li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            APAED
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Lar dos Idosos Luiza de Marillac
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Instituto Carinho
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Instituto Seja Amor
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Associação dos Idosos de Ceilândia
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Abrigo dos Excepcionais de Ceilândia
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Creche Leon Dennis e Creche Vovó Luzimar
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Projeto Social Um Dia Sem Fome
+                        </li>
+                        <li class="partner-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-5h2v5zm4 0h-2v-5h2v5zm-4-7h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            CEOC
+                        </li>
                     </ul>
-                    <div class="photo-indicator">📸 INSERIR AQUI: Fotos das instituições beneficiadas</div>
+                    <!-- O placeholder de foto foi removido daqui -->
                 </div>
             </section>
 
@@ -1249,7 +1576,7 @@
                         <li>Plano de Trabalho Anual</li>
                         <li>Certificados e Licenças</li>
                     </ul>
-                    <div class="photo-indicator">📸 INSERIR AQUI: Imagens dos documentos</div>
+                    <!-- O placeholder de imagem dos documentos foi removido daqui -->
                 </div>
             </section>
 
@@ -1273,7 +1600,6 @@
                         <div class="contact-item">
                             <a href="https://www.instagram.com/institutotribus/" target="_blank">Instagram: @institutotribus</a>
                             <a href="https://www.instagram.com/domingueira_moto_rock/" target="_blank">Instagram: @domingueira_moto_rock</a>
-                            <a href="https://www.facebook.com/institutotribus/" target="_blank">Facebook: Instituto Tribus</a>
                             <a href="#" target="_blank">YouTube: Domingueira Moto Rock</a>
                         </div>
                     </div>
@@ -1308,37 +1634,45 @@
     </div>
 
     <script>
+        // Seleciona o botão hambúrguer, o menu de navegação e os links de navegação
         const hamburger = document.getElementById('hamburger-toggle');
         const navMenu = document.getElementById('nav-menu');
         const navLinks = document.querySelectorAll('.nav-link');
         const navLogo = document.querySelector('.nav-logo');
 
+        // Função para alternar a visibilidade do menu
         function toggleMenu() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         }
 
+        // Adiciona um ouvinte de evento de clique ao botão hambúrguer
         hamburger.addEventListener('click', toggleMenu);
 
+        // Função para fechar o menu
         function closeMenu() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
         }
 
+        // Adiciona um ouvinte de evento de clique a cada link de navegação para fechar o menu ao clicar
         navLinks.forEach(link => {
             link.addEventListener('click', closeMenu);
         });
         
+        // Adiciona um ouvinte de evento de clique ao logo de navegação para rolar para o topo e fechar o menu
         navLogo.addEventListener('click', function(event) {
-            event.preventDefault();
-            closeMenu();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            event.preventDefault(); // Previne o comportamento padrão do link
+            closeMenu(); // Fecha o menu
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Rola para o topo suavemente
         });
 
+        // Adiciona um ouvinte de evento de clique ao documento para fechar o menu se o clique for fora dele
         document.addEventListener('click', function (event) {
-            const isClickInsideMenu = navMenu.contains(event.target);
-            const isClickOnHamburger = hamburger.contains(event.target);
+            const isClickInsideMenu = navMenu.contains(event.target); // Verifica se o clique foi dentro do menu
+            const isClickOnHamburger = hamburger.contains(event.target); // Verifica se o clique foi no botão hambúrguer
 
+            // Se o clique não foi dentro do menu nem no botão hambúrguer e o menu está ativo, fecha o menu
             if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
                 closeMenu();
             }
