@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instituto Tribus - Portfólio de Capacidade Técnica</title>
     <style>
         /* Reset de margem e preenchimento para todos os elementos */
@@ -790,43 +790,166 @@
             body {
                 font-size: 10pt;
                 background: #fff;
+                color: #000; /* Garante que o texto seja preto para impressão */
             }
 
             /* Oculta elementos não essenciais para impressão */
-            .nav, .footer, .photo-indicator, .hamburger-menu, .contact-grid, #apoio .card:first-child {
+            .nav, .hamburger-menu, .contact-grid, #apoio .card:first-child {
                 display: none;
             }
+            
+            /* Rodapé: manter visível mas com estilo simplificado */
+            .footer {
+                display: block; /* Torna o rodapé visível */
+                background: #f8f8f8; /* Fundo claro */
+                color: #555; /* Texto mais escuro */
+                text-align: center;
+                padding: 20px;
+                margin-top: 40px;
+                border-top: 1px solid #eee;
+            }
+            .footer-quote {
+                color: #333; /* Cor mais escura para a citação */
+            }
+
 
             /* Força quebra de página antes de cada seção */
             .section {
                 page-break-before: always;
+                padding-top: 20px; /* Adiciona um pouco de padding no topo de cada nova página */
             }
             /* Evita quebra de página antes do prefácio */
             #prefacio {
                 page-break-before: avoid;
+                padding-top: 0; /* Sem padding extra para a primeira seção */
             }
             
             /* Remove estilos de fundo e sombra do cabeçalho para impressão */
             .header {
-                background-image: none !important;
-                background-color: #fff !important;
-                color: #000 !important;
+                background: #f0f0f0 !important; /* Fundo cinza claro para o cabeçalho */
+                color: #2c3e50 !important; /* Texto mais escuro para o cabeçalho */
                 box-shadow: none;
-                padding: 20px 0;
+                padding: 30px 20px; /* Padding reduzido */
+            }
+            .header h1, .header .subtitle, .header .org-name, .header .details {
+                text-shadow: none; /* Remove sombra do texto */
+                color: #2c3e50 !important; /* Garante que a cor do texto seja escura */
+            }
+            .header .org-name {
+                color: #e67e22 !important; /* Mantém uma cor distinta para o nome da organização */
+            }
+            .logo-placeholder img {
+                filter: grayscale(100%); /* Deixa o logo em escala de cinza para impressão */
+                opacity: 0.8;
             }
 
             /* Remove sombras e adiciona borda para cartões na impressão */
             .card, .project-card, .stat-card-clean, .stat-card-chart, .value-item {
-                break-inside: avoid;
+                break-inside: avoid; /* Evita quebra dentro desses elementos */
                 box-shadow: none;
                 border: 1px solid #ddd;
                 padding: 15px;
+                margin-bottom: 20px; /* Ajusta a margem para impressão */
             }
             
+            /* Garante que as imagens nos cartões sejam visíveis */
+            .photo-indicator img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+                box-shadow: none; /* Remove sombras para impressão */
+                border: 1px solid #eee; /* Borda sutil */
+            }
+            .photo-indicator {
+                background: #fff; /* Fundo branco para o indicador de foto */
+                border: none; /* Remove borda tracejada */
+                color: #555; /* Texto mais escuro */
+            }
+
+            /* Estilos de impressão específicos do cartão de projeto */
+            .project-card .project-header {
+                background: #e0e0e0 !important; /* Fundo mais claro para o cabeçalho do projeto */
+                color: #2c3e50 !important; /* Texto mais escuro */
+                box-shadow: none;
+            }
+            .project-card .project-icon svg {
+                fill: #2c3e50 !important; /* Ícones mais escuros */
+            }
+
+            /* Estilos de impressão específicos dos cartões de estatísticas */
+            .stat-icon {
+                background-color: #f0f8ff !important; /* Fundo mais claro para os ícones de estatísticas */
+            }
+            .stat-icon svg {
+                fill: #2980b9 !important; /* Azul mais escuro para os ícones de estatísticas */
+            }
+            .stat-number {
+                color: #2c3e50 !important;
+            }
+            .stat-label {
+                color: #555 !important;
+            }
+
+            /* Estilos de impressão específicos dos itens de valor */
+            .value-icon-container {
+                background-color: #f0f8ff !important;
+            }
+            .value-icon-container svg {
+                fill: #2980b9 !important;
+            }
+            .value-item h5 {
+                color: #2c3e50 !important;
+            }
+            .value-item p {
+                color: #555 !important;
+            }
+
+            /* Estilos de impressão específicos dos badges de parceiros */
+            .partner-badge {
+                background: #f0f0f0 !important; /* Fundo mais claro */
+                color: #333 !important; /* Texto mais escuro */
+                box-shadow: none;
+                border: 1px solid #eee;
+            }
+            .partner-badge svg {
+                fill: #2980b9 !important; /* Azul mais escuro */
+            }
+
+            /* Separadores de Categoria para impressão */
+            .category-separator {
+                margin: 40px 0 30px 0; /* Ajusta as margens */
+            }
+            .category-title {
+                background: #d0d0d0 !important; /* Cinza sólido claro */
+                color: #333 !important; /* Texto mais escuro */
+                box-shadow: none;
+                border: 1px solid #ccc; /* Adiciona uma borda sutil */
+            }
+            .category-separator::before,
+            .category-separator::after {
+                background: #ccc; /* Linha mais escura */
+            }
+
             /* Remove sublinhado de links e mantém cor para impressão */
             a {
                 text-decoration: none;
                 color: inherit;
+            }
+
+            /* Ajusta a largura do contêiner para impressão A4 */
+            .container {
+                max-width: 100%; /* Usa largura total para impressão */
+                margin: 0; /* Remove margem automática */
+                box-shadow: none;
+                border: none;
+            }
+            .content {
+                padding: 20mm; /* Usa mm para unidades de impressão, equivalente às margens A4 */
+            }
+            /* Garante que as imagens não transbordem */
+            img {
+                max-width: 100%;
+                height: auto;
             }
         }
     </style>
@@ -1080,7 +1203,7 @@
                         <div class="stat-label">Instituições Beneficiadas</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5-2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                        <div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
                         <div class="stat-number">1.500</div>
                         <div class="stat-label">Pessoas em vulnerabilidade alimentar</div>
                     </div>
